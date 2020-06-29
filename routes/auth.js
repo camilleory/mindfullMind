@@ -126,13 +126,27 @@ authRoutes.get('/auth/spotify', passport.authenticate('spotify'), function(req, 
   // function will not be called.
 });
 
+// authRoutes.get(
+//   '/auth/spotify/callback',
+//   passport.authenticate('spotify', { failureRedirect: '/login' }, ),
+//   function(req, res) {
+//     // Successful authentication, redirect home.
+//     res.redirect('/');
+//   }
+// );
+
 authRoutes.get(
   '/auth/spotify/callback',
-  passport.authenticate('spotify', { failureRedirect: '/login' }),
+  passport.authenticate('spotify', {
+    scope: ['user-read-email', 'user-read-private']
+  }),
   function(req, res) {
-    // Successful authentication, redirect home.
-    res.redirect('/');
+    // The request will be redirected to spotify for authentication, so this
+    // function will not be called.
+        res.redirect('/');
+
   }
 );
+
 
 module.exports = authRoutes;
