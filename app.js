@@ -8,7 +8,11 @@ const hbs          = require('hbs');
 const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
+const session       = require('express-session');
+const passport      = require('passport');
 
+
+require('./config/passport');
 
 mongoose
   .connect('mongodb://localhost/mindfullmind', {useNewUrlParser: true})
@@ -24,6 +28,7 @@ const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.
 
 const app = express();
 
+
 // Middleware Setup
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -38,24 +43,34 @@ app.use(require('node-sass-middleware')({
   sourceMap: true
 }));
       
+//Session Setup
+
+const MongoStore    = require('connect-mongo')(session);
+app.use(session({
+  secret: "doesn't matter in our case", // but it's required
+  resave: false,
+  saveUninitialized: false, // don't create cookie for non-logged-in user
+  // MongoStore makes sure the user stays logged in also when the server restarts
+  store: new MongoStore({ mongooseConnection: mongoose.connection }) 
+}));
+
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
-
+app.use(passport.initialize());
+app.use(passport.session());
 
 
 // default value for title local
 app.locals.title = 'Express - Generated with IronGenerator';
 
-
+const auth = require('./routes/auth');
+app.use('/api', auth);
 
 const index = require('./routes/index');
 app.use('/', index);
 
 
 module.exports = app;
-
-// >>> for json dependancy
-// "react-router-dom": "^5.2.0",
