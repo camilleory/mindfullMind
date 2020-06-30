@@ -54,17 +54,18 @@ class RitualChoice extends React.Component {
     }));
   }
 
+  onChangeEmbodiment = () => {
+    this.setState(initialState => ({
+      isEmbodiment: !initialState.isEmbodiment,
+    }));
+  }
   onChangeSoundscape = () => {
     this.setState(initialState => ({
       isSoundscape: !initialState.isSoundscape,
     }));
   }
 
-  onChangeEmbodiment = () => {
-    this.setState(initialState => ({
-      isEmbodiment: !initialState.isEmbodiment,
-    }));
-  }
+
 
   // Submit
   onSubmit = (e) => {
