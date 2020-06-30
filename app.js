@@ -1,7 +1,9 @@
 require('dotenv').config();
 
-const bodyParser   = require('body-parser');
+const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+
+
 const express      = require('express');
 const favicon      = require('serve-favicon');
 const hbs          = require('hbs');
@@ -12,10 +14,11 @@ const session       = require('express-session');
 const passport      = require('passport');
 
 
+
 require('./config/passport');
 
 mongoose
-  .connect('mongodb://localhost/mindfullmind', {useNewUrlParser: true})
+  .connect('mongodb://localhost/mindfullmind', { useNewUrlParser: true })
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -38,10 +41,11 @@ app.use(cookieParser());
 // Express View engine setup
 
 app.use(require('node-sass-middleware')({
-  src:  path.join(__dirname, 'public'),
+  src: path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public'),
   sourceMap: true
 }));
+
       
 //Session Setup
 
@@ -53,6 +57,7 @@ app.use(session({
   // MongoStore makes sure the user stays logged in also when the server restarts
   store: new MongoStore({ mongooseConnection: mongoose.connection }) 
 }));
+
 
 
 app.set('views', path.join(__dirname, 'views'));
@@ -74,3 +79,6 @@ app.use('/', index);
 
 
 module.exports = app;
+
+// >>> for json dependancy
+// "react-router-dom": "^5.2.0",
