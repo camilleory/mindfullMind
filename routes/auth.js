@@ -119,7 +119,7 @@ authRoutes.post('/logout', (req, res, next) => {
 });
 
 
-// Sign in with Spotify - can we check if this works without frontend? + Where to add Link
+// Sign in with Spotify 
 
 authRoutes.get('/auth/spotify', passport.authenticate('spotify'), function(req, res) {
   // The request will be redirected to spotify for authentication, so this
@@ -147,6 +147,9 @@ authRoutes.get(
 
   }
 );
+
+
+
 
 
 module.exports = authRoutes;
