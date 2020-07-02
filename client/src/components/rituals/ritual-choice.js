@@ -163,7 +163,7 @@ class RitualChoice extends React.Component {
 
         {this.state.isSoundscape ? <Soundscape /> : null}
 
-
+ 
 
         {/* 
         
