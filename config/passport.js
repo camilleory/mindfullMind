@@ -55,7 +55,8 @@ passport.use(
       callbackURL: 'http://localhost:5555/api/auth/spotify/callback'
     },
     function(accessToken, refreshToken, expires_in, profile, done) {
-      User.findOrCreate({ spotifyId: profile.id }, function(err, user) {
+      console.log("profile", profile)
+      User.findOrCreate({ spotifyId: profile.id ,spotifyEmail: profile.email, display_name: profile.displayName /*images: profile.images*/ }, function(err, user) {
         return done(err, user);
       });
     }

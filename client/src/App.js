@@ -18,25 +18,22 @@ import Soundscape from './components/rituals/r-sound'
 
 
 
-
-
-
-
 class App extends React.Component {
 
-  // state = {
-  //   loggedInUser: this.props.user
-  // }
+  state = {
+    loggedInUser: "Camille"
+  }
 
-  // // user is not logged in already --> they are logging in using our React app
-  // updateUser = (newUser) => {
-  //   this.setState({
-  //     loggedInUser: newUser
-  //   })
-  // }
+  // user is not logged in already --> they are logging in using our React app
+  updateUser = (newUser) => {
+    this.setState({
+      loggedInUser: newUser
+    })
+  }
 
 
   render() {
+
     return (
       <div className="App">
 
@@ -51,8 +48,17 @@ class App extends React.Component {
 
           {/*  ---------------------------> Auth Routing */}
           <Route exact path="/auth" component={Auth} />
-          <Route exact path="/auth/signup" component={Signup} />
-          <Route exact path="/auth/login" component={Login} />
+          <Route exact path="/auth/signup">
+
+          <Signup updateNewUser={this.updateUser}></Signup>
+
+          </Route>
+          {/* <Route exact path="/auth/login">
+            <Login currentUser={this.state.loggedInUser}></Login>
+          </Route>  */}
+
+
+          <Route exact path='/auth/login' render={() => <Login currentUser={this.state.loggedInUser}/>}/>
 
 
           {/*  ---------------------------> Auth Routing */}
