@@ -6,7 +6,11 @@ const userSchema = new Schema({
   email: String,
   password: String,
   firstName: String,
-  lastName: String
+  lastName: String,
+  spotifyId: String,
+  spotifyEmail: String,
+  display_name: String,
+  // images: [Object]
 }, 
 {
   timestamps: true

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link, Redirect} from 'react-router-dom'
 import axios from "axios";
 
 //import About from './landing/About'
@@ -8,7 +8,8 @@ class Signup extends React.Component {
 
   state = {
       email: "",
-      password: ""
+      password: "",
+      redirect: false
     }
 
 
@@ -17,26 +18,26 @@ class Signup extends React.Component {
       const email = this.state.email;
       const password = this.state.password;
   
-      axios.post('/auth/signup', {email, password})
-        .then (() => {
-          console.log('user sent to DB', email, password)
-        })
-        // (response => {
-        //   this.setState({
-        //     username: "",
-        //     password: "",
-        //   });
-          // this.props.updateUser(response)
-        // })
-        .catch(error => console.log(error))
-    }
+
+      axios.post('/api/signup', {email, password})
+      .then(response => {
+        // this.setState({
+        //   email: "",
+        //   password: "",
+        // });
+         this.props.updateNewUser(response.data)
+        this.setState({ redirect: true })
+         console.log(response.data)
+      })
+      .catch(error => console.log(error)) }
+  
   
     handleChange = (event) => {
       const { name, value } = event.target;
       this.setState({ [name]: value });
     }
 
-  // // user is not logged in already --> they are logging in using our React app
+  // user is not logged in already --> they are logging in using our React app
   // updateUser = (newUser) => {
   //   this.setState({
   //     loggedInUser: newUser
@@ -47,7 +48,7 @@ class Signup extends React.Component {
   render() {
     return (
       <div className="App">
-
+          { this.state.redirect ? <Redirect to="/auth/login"></Redirect> : null }
           <h3>Signup Form + authentication + redirect to the ritual choice by clicking submit button on the form</h3>
           <form onSubmit={this.handleFormSubmit}>
           <label>Email:</label>

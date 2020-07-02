@@ -12,6 +12,7 @@ const User       = require('../models/user-model');
 // Sign-up with email 
 
 authRoutes.post('/signup', (req, res, next) => {
+  console.log("i am here")
     const email = req.body.email;
     const password = req.body.password;
   
@@ -41,11 +42,10 @@ authRoutes.post('/signup', (req, res, next) => {
         const hashPass = bcrypt.hashSync(password, salt);
   
         const aNewUser = new User({
-            email:email,
+            email: email,
             password: hashPass
         });
         
-        //aNewUser.plugin(findOrCreate)
 
         aNewUser.save(err => {
             if (err) {
