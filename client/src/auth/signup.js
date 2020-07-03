@@ -48,8 +48,9 @@ class Signup extends React.Component {
   render() {
     return (
       <div className="App">
+              <h4>Sign up</h4>
           { this.state.redirect ? <Redirect to="/auth/login"></Redirect> : null }
-          <h3>Signup Form + authentication + redirect to the ritual choice by clicking submit button on the form</h3>
+          
           <form onSubmit={this.handleFormSubmit}>
           <label>Email:</label>
           <input type="email" name="email" value={this.state.email} onChange={e => this.handleChange(e)} />
