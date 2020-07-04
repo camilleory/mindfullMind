@@ -18,12 +18,10 @@ import Meditation from './components/rituals/r-meditation'
 import Soundscape from './components/rituals/r-sound'
 
 
-
-
 class App extends React.Component {
 
   state = {
-    loggedInUser: ""
+    loggedInUser: "this.props.user"
   }
 
   // user is not logged in already --> they are logging in using our React app

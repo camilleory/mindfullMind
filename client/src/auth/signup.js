@@ -31,7 +31,7 @@ class Signup extends React.Component {
       })
       .catch(error => console.log(error)) }
   
-  
+      
     handleChange = (event) => {
       const { name, value } = event.target;
       this.setState({ [name]: value });
@@ -43,7 +43,12 @@ class Signup extends React.Component {
   //     loggedInUser: newUser
   //   })
   // }
-
+//   signUpWithSpotify = () => {
+//     axios.get('/api/auth/spotify')
+//   .then(()=>{
+//     console.log('you are signed up with spotify')
+//   })
+// }
 
   render() {
     return (
@@ -64,6 +69,9 @@ class Signup extends React.Component {
           {/* <button  > <Link to='ritual-choice'> Signup </Link></button> */}
           <br/>
           <Link to='/auth/login'> Already have an account? </Link>
+
+            <a href='http://localhost:5555/api/auth/spotify'> Sign up with Spotify</a>
+
       </div>
     );
   }

@@ -2,13 +2,16 @@ const express    = require('express');
 const journalRoutes = express.Router();
 const JournalEntry       = require('../models/journalEntry-model');
 
-journalRoutes.post('/journal', (req, res, next) =>{
-  console.log("posting entry")
-  const entry = req.body.entry;
 
+//Posting entries into DB
+
+journalRoutes.post('/journal', (req, res, next) =>{
+  const entry = req.body.entry;
 
   const newEntry = new JournalEntry({
     entry: entry,
+    owner: req.user._id 
+
   });
 
 
@@ -26,5 +29,18 @@ journalRoutes.post('/journal', (req, res, next) =>{
   })
 
 })
+
+// Get route to get entries from DB 
+
+journalRoutes.get('/journal', (req, res, next) => {
+  JournalEntry.find()
+    // .populate('journalEntries')
+    .then(allEntries => {
+      res.json(allEntries);
+    })
+    .catch(err => {
+      res.json(err);
+    });
+});
 
 module.exports = journalRoutes;
