@@ -72,5 +72,7 @@ app.use('/api', auth);
 const index = require('./routes/index');
 app.use('/', index);
 
+const journal = require('./routes/journal')
+app.use('/rituals', journal)
 
 module.exports = app;
