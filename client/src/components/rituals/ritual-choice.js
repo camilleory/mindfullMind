@@ -1,5 +1,6 @@
 import React from 'react';
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 //import About from './landing/About'
 import Soundscape from './r-sound'
@@ -109,6 +110,14 @@ class RitualChoice extends React.Component {
   }
 
 
+  // Log out
+    //  logoutUser = (props) =>{
+    //   axios.post('/api/logout', {})
+    //   .then(response => response.data)      
+    //   .then(() => {
+    //     props.updateUser(null);  // sets the global user object to 'null'
+    //   })
+    // }
 
 
   render() {
@@ -194,6 +203,9 @@ class RitualChoice extends React.Component {
             </button>
           </div>
         </form>
+        {/* <Link to='/'>
+              <button onClick={() => this.logoutUser(this.props)}>Logout</button>
+            </Link> */}
 
         {/* <button className="btn btn-success" onClick={this.nextRitualHandler}>
           Continue

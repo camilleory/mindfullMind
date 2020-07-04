@@ -51,6 +51,8 @@ class Login extends React.Component {
           <input type="submit" value="Login" />
           
         </form>
+        <Link to='/auth/signup'> Sign up with Spotify </Link>
+
         <Link to='/auth/signup'> Don't have an account? </Link>
 
       </div>
