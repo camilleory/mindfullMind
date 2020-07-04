@@ -3,7 +3,7 @@ const Schema   = mongoose.Schema;
 
 const journalEntrySchema = new Schema({
   entry: [String],
-  date: new Date ()
+  // date: new Date ()
 }, 
 {
   timestamps: true

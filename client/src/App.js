@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import LandingPage from './landing/Landing-Page'
 import Description from './landing/Description'
 import About from './landing/About'
@@ -23,7 +23,7 @@ import Soundscape from './components/rituals/r-sound'
 class App extends React.Component {
 
   state = {
-    loggedInUser: "Camille"
+    loggedInUser: ""
   }
 
   // user is not logged in already --> they are logging in using our React app
@@ -55,18 +55,25 @@ class App extends React.Component {
           <Signup updateNewUser={this.updateUser}></Signup>
 
           </Route>
-          {/* <Route exact path="/auth/login">
-            <Login currentUser={this.state.loggedInUser}></Login>
-          </Route>  */}
 
 
-          <Route exact path='/auth/login' render={() => <Login currentUser={this.state.loggedInUser}/>}/>
+          <Route exact path='/auth/login' render={() => <Login updateLoggedInUser={this.updateUser} currentUser={this.state.loggedInUser}/>}/>
 
 
           {/*  ---------------------------> Auth Routing */}
-          <Route exact path="/auth/ritual-choice" component={RitualChoice} />
-          <Route exact path="/auth/ritual-render" component={RitualRenderSequence} />
+          {/* <Route exact path="/auth/ritual-choice" component={RitualChoice} /> */}
+          {/* Protected route: user can access only if logged in */}
 
+          <Route exact path='/auth/ritual-choice' render={() => {
+            if (this.state.loggedInUser){
+              return <RitualChoice currentUser={this.state.loggedInUser}/>
+            } else {
+              return <Redirect to={{pathname: '/auth/login'}}/>
+            }
+          }}/>
+           
+          {/* <Route exact path="/auth/rituals" component={RitualRenderSequence} /> */}
+          <Route exact path="/auth/ritual-render" component={RitualRenderSequence} />
 
 
           {/*  ---------------------------> CREATE /JOURNAL/:ID <--------------------
