@@ -3,6 +3,10 @@ import React from 'react';
 
 //import About from './landing/About'
 import Soundscape from './r-sound'
+import Meditation from './r-meditation'
+import Embodiment from './r-body'
+import Journal from './r-journal'
+
 
 
 
@@ -12,12 +16,14 @@ class RitualChoice extends React.Component {
 
   state = {
     rituals: [],
-    currentIndex: -1
+    currentIndex: -1,
 
     // isMeditation: false,
     // isJournal: false,
     // isEmbodiment: false,
     // isSoundscape: false,
+
+    continueButton: false
 
 
   }
@@ -46,7 +52,7 @@ class RitualChoice extends React.Component {
 
 
   onChangeMeditation = () => {
-    if (this.state.rituals.includes("meditation")) {
+    if (this.state.rituals.includes()) {
       //this.state.rituals // remove from array
 
 
@@ -80,7 +86,7 @@ class RitualChoice extends React.Component {
 
 
 
-  // Submit
+  // Submit Button
   clickHandler = (e) => {
     //e.preventDefault();
     this.setState({
@@ -88,13 +94,43 @@ class RitualChoice extends React.Component {
     })
   }
 
+
+  // Continue Button
+  nextRitualHandler = (e) => {
+    //e.preventDefault();
+    this.setState({
+      currentIndex: this.state.currentIndex + 1
+    })
+  }
+
+
   onSubmit = (e) => {
     e.preventDefault()
   }
 
+
+
+
   render() {
 
     let currentRitual = this.state.rituals[this.state.currentIndex]
+
+    let ritualComp;
+    if (currentRitual === "soundscape") {
+      ritualComp = <Soundscape />
+    } else if (currentRitual === "meditation") {
+      ritualComp = <Meditation />
+    } else if (currentRitual === "journal") {
+      ritualComp = <Journal />
+    } else if (currentRitual === "embodiment") {
+      ritualComp = <Embodiment />
+    }
+
+
+    let continueButton = <button className="btn btn-success" onClick={this.nextRitualHandler}>
+    Continue
+      </button>
+
 
     return (
       <div className="App">
@@ -159,18 +195,23 @@ class RitualChoice extends React.Component {
           </div>
         </form>
 
-        {currentRitual}
+        {/* <button className="btn btn-success" onClick={this.nextRitualHandler}>
+          Continue
+            </button> */}
 
-        {this.state.isSoundscape ? <Soundscape /> : null}
 
- 
+        {ritualComp}
+        {continueButton}
+
+        {/* {this.state.isSoundscape ? <Soundscape /> : null} */}
+
+
 
         {/* 
         
       - understand the sequence
       - choose/un-choose operator - array remove or concat
       - remove the choice check-boxes once the start is clicked (operator).then
-      - render the actual components 
       - turn "start" into "continue" */}
 
       </div>
