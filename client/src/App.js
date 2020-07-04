@@ -10,6 +10,8 @@ import Signup from './auth/signup'
 import Login from './auth/login'
 
 import RitualChoice from './components/rituals/ritual-choice'
+import RitualRenderSequence from './components/rituals/ritual-render'
+
 import Embodiment from './components/rituals/r-body'
 import Journal from './components/rituals/r-journal'
 import Meditation from './components/rituals/r-meditation'
@@ -71,6 +73,7 @@ class App extends React.Component {
           }}/>
            
           {/* <Route exact path="/auth/rituals" component={RitualRenderSequence} /> */}
+          <Route exact path="/auth/ritual-render" component={RitualRenderSequence} />
 
 
           {/*  ---------------------------> CREATE /JOURNAL/:ID <--------------------
