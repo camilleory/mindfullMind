@@ -63,7 +63,7 @@ class Signup extends React.Component {
 
           {/* <button  > <Link to='ritual-choice'> Signup </Link></button> */}
           <br/>
-          <Link to='/auth/login'> Alredy have an account? </Link>
+          <Link to='/auth/login'> Already have an account? </Link>
       </div>
     );
   }
