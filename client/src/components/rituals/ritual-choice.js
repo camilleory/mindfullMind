@@ -1,5 +1,6 @@
 import React from 'react';
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 //import About from './landing/About'
 
@@ -73,6 +74,16 @@ class RitualChoice extends React.Component {
     console.log(this.state);
   }
 
+
+  // Log out
+    //  logoutUser = (props) =>{
+    //   axios.post('/api/logout', {})
+    //   .then(response => response.data)      
+    //   .then(() => {
+    //     props.updateUser(null);  // sets the global user object to 'null'
+    //   })
+    // }
+
   render() {
     return (
       <div className="App">
@@ -136,6 +147,9 @@ class RitualChoice extends React.Component {
             </button>
           </div>
         </form>
+        {/* <Link to='/'>
+              <button onClick={() => this.logoutUser(this.props)}>Logout</button>
+            </Link> */}
 
       </div>
     );
