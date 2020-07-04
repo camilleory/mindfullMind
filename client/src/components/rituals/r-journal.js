@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import Entry from './journalEntry';
 
 class Journal extends React.Component {
 
@@ -31,7 +32,8 @@ class Journal extends React.Component {
       axios.post('/rituals/journal',{entry})
       .then(response =>{
         this.setState({
-          entry: ""
+          entry: "",
+          owner: ""
         })
         console.log(response.data)
       })
@@ -76,7 +78,12 @@ class Journal extends React.Component {
 
 
         <h4>Previous entries</h4>
-        <p>Previous entries here</p>
+            
+        <Entry></Entry>
+        {/* Should I get the data here?  */}
+        {/* {this.state.entriesList.map((c) => <Contact removeContact={this.removeOneContact} key={c.id} id={c.id} picture={c.pictureUrl} name={c.name} popularity={c.popularity}></Contact>)} */}
+
+
       </div>
     );
   }
@@ -84,4 +91,4 @@ class Journal extends React.Component {
 
 
 
-export default Journal;
+export default Journal; 
