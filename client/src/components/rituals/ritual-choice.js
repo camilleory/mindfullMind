@@ -1,8 +1,6 @@
-
-import React from 'react';
-import { Link } from 'react-router-dom'
-import axios from 'axios'
-
+import React from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
 //import About from './landing/About'
 import Soundscape from "./r-sound";
@@ -18,34 +16,62 @@ class RitualChoice extends React.Component {
     continueButton: false,
     deepWorkButton: false,
     showheader: true,
-    ShowDeepWork: false,
+    ShowDeepWork: false
   };
 
   onChangeMeditation = () => {
-    if (this.state.rituals.includes()) {
-      //this.state.rituals // remove from array
+    if (this.state.rituals.includes("meditation")) {
+      this.setState({
+        rituals: this.state.rituals.filter(r => r !== "meditation")
+      });
+    } else {
+      this.setState({
+        rituals: this.state.rituals.concat("meditation")
+      });
     }
-    this.setState(initialState => ({
-      rituals: this.state.rituals.concat("meditation")
-    }));
   };
+
 
   onChangeJournal = () => {
-    this.setState(initialState => ({
-      rituals: this.state.rituals.concat("journal")
-    }));
+    if (this.state.rituals.includes("journal")) {
+      this.setState({
+        rituals: this.state.rituals.filter(r => r !== "journal")
+      });
+    } else {
+      this.setState({
+        rituals: this.state.rituals.concat("journal")
+      });
+    }
   };
 
+
+
   onChangeEmbodiment = () => {
-    this.setState(initialState => ({
-      rituals: this.state.rituals.concat("embodiment")
-    }));
+    if (this.state.rituals.includes("embodiment")) {
+      this.setState({
+        rituals: this.state.rituals.filter(r => r !== "embodiment")
+      });
+    } else {
+      this.setState({
+        rituals: this.state.rituals.concat("embodiment")
+      });
+    }
   };
+
+
   onChangeSoundscape = () => {
-    this.setState(initialState => ({
-      rituals: this.state.rituals.concat("soundscape")
-    }));
+    if (this.state.rituals.includes("soundscape")) {
+      this.setState({
+        rituals: this.state.rituals.filter(r => r !== "soundscape")
+      });
+    } else {
+      this.setState({
+        rituals: this.state.rituals.concat("soundscape")
+      });
+    }
   };
+
+
 
   // Submit Button
   clickHandler = e => {
@@ -53,20 +79,20 @@ class RitualChoice extends React.Component {
     this.setState({
       currentIndex: this.state.currentIndex + 1,
       showheader: false,
-      continueButton: true,
+      continueButton: true
     });
     if (this.state.rituals.length - 2 === this.state.currentIndex) {
       this.setState({
         ShowDeepWork: true,
         continueButton: false
-      })
+      });
     }
   };
 
   // Continue Button
   nextRitualHandler = e => {
-    console.log("ritual arr", this.state.rituals)
-    console.log("current idx", this.state.currentIndex)
+    console.log("ritual arr", this.state.rituals);
+    console.log("current idx", this.state.currentIndex);
 
     //e.preventDefault();
     this.setState({
@@ -76,7 +102,7 @@ class RitualChoice extends React.Component {
       this.setState({
         ShowDeepWork: true,
         continueButton: false
-      })
+      });
     }
   };
 
@@ -84,23 +110,17 @@ class RitualChoice extends React.Component {
     e.preventDefault();
   };
 
-
   render() {
-
     // Log out
     //  logoutUser = (props) =>{
     //   axios.post('/api/logout', {})
-    //   .then(response => response.data)      
+    //   .then(response => response.data)
     //   .then(() => {
     //     props.updateUser(null);  // sets the global user object to 'null'
     //   })
     // }
 
-
     let currentRitual = this.state.rituals[this.state.currentIndex];
-
-
-
 
     let ritualComp;
     if (currentRitual === "soundscape") {
@@ -121,11 +141,16 @@ class RitualChoice extends React.Component {
       </button>
     );
 
+
+    //----------------------> deep route path
     let deepWorkButton = (
       <button className="btn btn-success" onClick={this.nextRitualHandler}>
         Deep Work
       </button>
     );
+
+    // console.log("Rituals:", rituals)
+
     return (
       <div className="App">
         {/* conditional component rendering in ReactJS
@@ -192,9 +217,7 @@ class RitualChoice extends React.Component {
               </div>
             </form>
           </div>
-
         )}
-
 
         {/* <Link to='/'>
               <button onClick={() => this.logoutUser(this.props)}>Logout</button>
@@ -203,8 +226,6 @@ class RitualChoice extends React.Component {
         {/* <button className="btn btn-success" onClick={this.nextRitualHandler}>
           Continue
             </button> */}
-
-
 
         {ritualComp}
 
