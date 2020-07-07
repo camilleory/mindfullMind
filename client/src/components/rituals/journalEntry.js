@@ -5,30 +5,24 @@ import axios from 'axios'
 class Entry extends React.Component {
 
   state = {
-    entriesList: [],
-    loading:true
+    // entriesList: [],
+    //loading:true
   }
   
-  componentDidMount() {
-    axios.get('/rituals/journal').then((resp) => {
-      console.log(resp.data)
-      this.setState({
-        entriesList: resp.data,
-        loading: false
-      })
-    })
+  deleteHandler = () => {
+    this.props.removeEntry(this.props.id)
   }
 
   render() {
-    if(this.state.loading){
-      return <div>Loading...</div>
-    }
+    // if(this.state.loading){
+    //   return <div>Loading...</div>
+    // }
     return (
       <div>
-        I am the Journal component <br></br>
-        {this.state.entriesList[1].entry}
-
-
+        <h4>{this.props.update}</h4>
+        <p>{this.props.entry}</p>
+        <button>Edit</button>
+        <button onClick={this.deleteHandler}>Delete</button>
       </div>
   )
 }

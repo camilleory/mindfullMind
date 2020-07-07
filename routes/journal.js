@@ -15,17 +15,11 @@ journalRoutes.post('/journal', (req, res, next) =>{
   });
 
 
-  newEntry.save(err => {
-    if (err) {
-        res.status(400).json({ message: 'Saving entry to database went wrong.' });
-        return;
-    } else {
-      res.status(200)
-    }
+  newEntry.save().then((storedEntry)=>{
+    res.status(200).json(storedEntry);
 
-  }).then(()=>{
-    res.status(200)
-
+  }).catch(() => {
+    res.status(400).json({ message: 'Saving entry to database went wrong.' });
   })
 
 })

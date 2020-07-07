@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Entry from './journalEntry';
 
@@ -8,9 +8,13 @@ class Journal extends React.Component {
   state = {
     entry: "",
     freeflow: false,
-    prompts: false
+    prompts: false,
+    entriesList: [],
+    loading:true,
+    showEntries: false
   }
 
+  // Display text area if button is clicked
     displayTextArea = () => {
       this.setState({
         freeflow: true,
@@ -18,6 +22,7 @@ class Journal extends React.Component {
       })
     }
 
+  // Display prompts if button is clicked
     displayPrompts = () => {
       this.setState({
         freeflow: true,
@@ -25,25 +30,57 @@ class Journal extends React.Component {
       })
     }
 
+    // Save entry into state and DB when submit is clicked
     saveEntry = (event) => {
       event.preventDefault();
       const entry = this.state.entry
+     
       
       axios.post('/rituals/journal',{entry})
       .then(response =>{
         this.setState({
+          entriesList: [response.data, ...this.state.entriesList],
           entry: "",
-          owner: ""
+          owner: "",
         })
         console.log(response.data)
       })
 
-    }
 
+    }
+    //Getting user input
     handleChange = (event) => {
       const { name, value } = event.target;
       this.setState({ [name]: value });
     }
+
+    //Getting journal entries from database
+    componentDidMount() {
+      axios.get('/rituals/journal').then((resp) => {
+        console.log(resp.data)
+        this.setState({
+          entriesList: resp.data.reverse(),
+          loading: false
+        })
+      })
+    }
+
+    // Show previous entries when button is clicked
+    showEntries = () => {
+      this.setState({
+        showEntries: !this.state.showEntries
+      })
+    }
+
+    //Delete entry
+    removeEntry = (entryID) => {
+    axios.delete('rituals/journal' + entryID).then(() => {
+      this.setState({
+        entriesList: this.state.entriesList.filter(p => p._id !== entryID)
+      })
+    })
+  }
+
 
   render() {
     return (
@@ -53,9 +90,7 @@ class Journal extends React.Component {
         <hr></hr>
                 
       {/* make text area and prompts appear when button prompts pressed */}
-        
         <button onClick={this.displayTextArea}>Free Flow</button> <br/>
-
         <button onClick={this.displayPrompts}>Deep work prompts</button> <br/>
         
         { this.state.prompts ? <div>
@@ -66,7 +101,6 @@ class Journal extends React.Component {
         </div>: null }  
         
         {/* make text area appear when button free flow pressed */}
-
         { this.state.freeflow ? 
         <div>
           <form onSubmit = {this.saveEntry}> 
@@ -76,13 +110,11 @@ class Journal extends React.Component {
           </form>     
       </div>: null }
 
-
-        <h4>Previous entries</h4>
-            
-        <Entry></Entry>
-        {/* Should I get the data here?  */}
-        {/* {this.state.entriesList.map((c) => <Contact removeContact={this.removeOneContact} key={c.id} id={c.id} picture={c.pictureUrl} name={c.name} popularity={c.popularity}></Contact>)} */}
-
+          {/* Make previous entries appear when button clicked */}
+         <button onClick={this.showEntries}>Show previous entries</button>
+          {this.state.showEntries ?
+          this.state.entriesList.map((c) => <Entry removeEntry = {this.removeEntry} entry={c.entry} update={c.updatedAt} key = {c.id} id={c.id}></Entry>)
+            : null}
 
       </div>
     );
