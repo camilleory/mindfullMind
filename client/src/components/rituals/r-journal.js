@@ -74,13 +74,19 @@ class Journal extends React.Component {
 
     //Delete entry
     removeEntry = (entryID) => {
-    axios.delete('rituals/journal' + entryID).then(() => {
+    axios.delete('/rituals/journal/' + entryID).then(() => {
       this.setState({
         entriesList: this.state.entriesList.filter(p => p._id !== entryID)
       })
     })
   }
 
+    // Update entry
+    updateEntry =(entryID) => {
+      // this.setState({
+        
+      // })
+    }
 
   render() {
     return (
@@ -113,7 +119,7 @@ class Journal extends React.Component {
           {/* Make previous entries appear when button clicked */}
          <button onClick={this.showEntries}>Show previous entries</button>
           {this.state.showEntries ?
-          this.state.entriesList.map((c) => <Entry removeEntry = {this.removeEntry} entry={c.entry} update={c.updatedAt} key = {c.id} id={c.id}></Entry>)
+          this.state.entriesList.map((c) => <Entry removeEntry = {this.removeEntry} updateEntry={this.updateEntry} entry={c.entry} update={c.updatedAt} key = {c._id} _id={c._id}></Entry>)
             : null}
 
       </div>

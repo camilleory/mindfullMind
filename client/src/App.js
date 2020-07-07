@@ -21,7 +21,7 @@ import Soundscape from './components/rituals/r-sound'
 class App extends React.Component {
 
   state = {
-    loggedInUser: "this.props.user"
+    loggedInUser: this.props.user
   }
 
   // user is not logged in already --> they are logging in using our React app
