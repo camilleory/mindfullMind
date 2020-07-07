@@ -87,7 +87,7 @@ class RitualChoice extends React.Component {
 
   render() {
 
-  // Log out
+    // Log out
     //  logoutUser = (props) =>{
     //   axios.post('/api/logout', {})
     //   .then(response => response.data)      
@@ -193,9 +193,9 @@ class RitualChoice extends React.Component {
             </form>
           </div>
 
-//  was in the previous branch ->>>>>>>>>>>>>       )}
+        )}
 
-        </form>
+
         {/* <Link to='/'>
               <button onClick={() => this.logoutUser(this.props)}>Logout</button>
             </Link> */}
