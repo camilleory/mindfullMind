@@ -11,7 +11,8 @@ class Login extends React.Component {
   state = {
     email: "",
     password: "",
-    redirect: false
+    redirect: false,
+    errorMessage: ""
   }
 
 
@@ -22,12 +23,16 @@ class Login extends React.Component {
 
       axios.post('/api/login', {email, password})
     .then( response => {
-        // this.setState({ username: "", password: "" });
+      console.log(response.data)
         this.props.updateLoggedInUser(response.data)
         this.setState({ redirect: true })
 
     })
-    .catch( error => console.log(error) )
+    .catch( error => {
+      this.setState({
+        errorMessage: error.response.data.message,
+      })
+    }) 
   }
     
   handleChange = (event) => {  
@@ -40,18 +45,20 @@ class Login extends React.Component {
     return (
       <div className="App">
         <h4>Log in</h4>
+        {/* If there is a user logged in, redirect to ritual choice  */}
+        {this.props.currentUser ? <Redirect to="/auth/ritual-choice"></Redirect> : null}
         { this.state.redirect ? <Redirect to="/auth/ritual-choice"></Redirect> : null }
+
         <form onSubmit={this.handleFormSubmit}>
           <label>Email:</label>
-          <input type="text" name="email" value={this.state.email} onChange={ e => this.handleChange(e)}/>
+          <input type="text" name="email" value={this.state.email} required onChange={ e => this.handleChange(e)}/>
           <label>Password:</label>
-          <textarea name="password" value={this.state.password} onChange={ e => this.handleChange(e)} />
+          <input name="password" value={this.state.password} required onChange={ e => this.handleChange(e)} />
           
           <input type="submit" value="Login" />
           
         </form>
-        <Link to='/auth/signup'> Sign up with Spotify </Link>
-
+          {this.state.errorMessage ? <p>{this.state.errorMessage}</p>: null}
         <Link to='/auth/signup'> Don't have an account? </Link>
 
       </div>

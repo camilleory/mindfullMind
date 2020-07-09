@@ -18,7 +18,7 @@ class Entry extends React.Component {
     this.setState({
       showEditForm: true,
     })
-    this.props.updateEntry(this.props._id)
+    // this.props.updateEntry(this.props._id)
 
   }
 
@@ -26,17 +26,19 @@ class Entry extends React.Component {
      handleFormSubmit = (event) => {
      const entry = this.state.entry;
 
-    event.preventDefault();
+      event.preventDefault();
 
     axios.put(`/rituals/journal/${this.props._id}`, {entry})
-    .then( () => {
-       this.props.updateEntry(this.props._id)
-       this.setState({
+    .then( (response) => {
+      this.props.updateEntry(this.props._id, response.data )
+
+      this.setState({
          showEditForm: false
        })
     })
     .catch( error => console.log(error) )
   }
+
 
   handleChangeEntry = (event) => {  
     this.setState({

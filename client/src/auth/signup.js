@@ -9,7 +9,9 @@ class Signup extends React.Component {
   state = {
       email: "",
       password: "",
-      redirect: false
+      redirect: false,
+      errorMessage: ""
+
     }
 
 
@@ -25,12 +27,16 @@ class Signup extends React.Component {
         //   email: "",
         //   password: "",
         // });
-         this.props.updateNewUser(response.data)
+        this.props.updateNewUser(response.data)
         this.setState({ redirect: true })
          console.log(response.data)
       })
-      .catch(error => console.log(error)) }
-  
+      .catch( error => {
+        this.setState({
+          errorMessage: error.response.data.message,
+        })
+      }) 
+    }  
       
     handleChange = (event) => {
       const { name, value } = event.target;
@@ -58,13 +64,14 @@ class Signup extends React.Component {
           
           <form onSubmit={this.handleFormSubmit}>
           <label>Email:</label>
-          <input type="email" name="email" value={this.state.email} onChange={e => this.handleChange(e)} />
+          <input type="email" name="email" value={this.state.email} required onChange={e => this.handleChange(e)} />
 
           <label>Password:</label>
-          <textarea name="password" value={this.state.password} onChange={e => this.handleChange(e)} />
+          <input name="password" value={this.state.password} required onChange={e => this.handleChange(e)} />
 
           <input type="submit" value="Signup" />
         </form>
+        {this.state.errorMessage ? <p>{this.state.errorMessage}</p>: null}
 
           {/* <button  > <Link to='ritual-choice'> Signup </Link></button> */}
           <br/>
