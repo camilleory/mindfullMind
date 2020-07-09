@@ -33,10 +33,14 @@ authRoutes.post('/signup', (req, res, next) => {
       return;
     }
 
-    if (foundUser) {
-      res.status(400).json({ message: 'Email taken. Choose another one.' });
-      return;
-    }
+
+    // if(password.length < 8){
+    //     res.status(400).json({ message: 'Please make your password at least 8 characters long for security reasons.' });
+    //     return;
+    // }
+  
+    User.findOne({ email }, (err, foundUser) => {
+
 
     const salt = bcrypt.genSaltSync(10);
     const hashPass = bcrypt.hashSync(password, salt);
@@ -57,9 +61,11 @@ authRoutes.post('/signup', (req, res, next) => {
       // .login() here is actually a predefined passport method
       req.login(aNewUser, (err) => {
 
-        if (err) {
-          res.status(500).json({ message: 'Login after signup went bad.' });
-          return;
+
+        if (foundUser) {
+            res.status(400).json({ message: 'Email already taken.' });
+            return;
+
         }
 
         // Send the user's information to the frontend
@@ -140,8 +146,12 @@ authRoutes.get(
   passport.authenticate('spotify', {
     scope: ['user-read-email', 'user-read-private', "streaming"]
   }),
-  function (req, res) {
-    res.redirect('http://localhost:3000/');
+
+  function(req, res) {
+    // The request will be redirected to spotify for authentication, so this
+    // function will not be called.
+        res.redirect('http://localhost:3000/');
+
 
   }
 );

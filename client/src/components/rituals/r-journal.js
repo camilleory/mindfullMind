@@ -54,15 +54,9 @@ class Journal extends React.Component {
       this.setState({ [name]: value });
     }
 
-    //Getting journal entries from database
+    //Getting journal entries from database (also when updating)
     componentDidMount() {
-      axios.get('/rituals/journal').then((resp) => {
-        console.log(resp.data)
-        this.setState({
-          entriesList: resp.data.reverse(),
-          loading: false
-        })
-      })
+      this.updateEntry()
     }
 
     // Show previous entries when button is clicked
@@ -82,10 +76,14 @@ class Journal extends React.Component {
   }
 
     // Update entry
-    updateEntry =(entryID) => {
-      // this.setState({
-        
-      // })
+    updateEntry =(response) => {
+      axios.get('/rituals/journal').then((resp) => {
+        console.log(resp.data)
+        this.setState({
+          entriesList: resp.data.reverse(),
+          loading: false
+        })
+      })
     }
 
   render() {
@@ -119,7 +117,7 @@ class Journal extends React.Component {
           {/* Make previous entries appear when button clicked */}
          <button onClick={this.showEntries}>Show previous entries</button>
           {this.state.showEntries ?
-          this.state.entriesList.map((c) => <Entry removeEntry = {this.removeEntry} updateEntry={this.updateEntry} entry={c.entry} update={c.updatedAt} key = {c._id} _id={c._id}></Entry>)
+          this.state.entriesList.map((c) => <Entry removeEntry = {this.removeEntry} updateEntry={this.updateEntry} entry={c.entry} update={c.updatedAt.slice(0, 16).replace("T", ", ")} key = {c._id} _id={c._id}></Entry>)
             : null}
 
       </div>
