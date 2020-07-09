@@ -21,10 +21,10 @@ authRoutes.post('/signup', (req, res, next) => {
       return;
     }
 
-    if(password.length < 7){
-        res.status(400).json({ message: 'Please make your password at least 8 characters long for security reasons.' });
-        return;
-    }
+    // if(password.length < 8){
+    //     res.status(400).json({ message: 'Please make your password at least 8 characters long for security reasons.' });
+    //     return;
+    // }
   
     User.findOne({ email }, (err, foundUser) => {
 
@@ -34,7 +34,7 @@ authRoutes.post('/signup', (req, res, next) => {
         }
 
         if (foundUser) {
-            res.status(400).json({ message: 'Email taken. Choose another one.' });
+            res.status(400).json({ message: 'Email already taken.' });
             return;
         }
   
@@ -143,7 +143,7 @@ authRoutes.get(
   function(req, res) {
     // The request will be redirected to spotify for authentication, so this
     // function will not be called.
-        res.redirect('/');
+        res.redirect('http://localhost:3000/');
 
   }
 );

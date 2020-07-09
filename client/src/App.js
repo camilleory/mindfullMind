@@ -21,7 +21,8 @@ import Soundscape from './components/rituals/r-sound'
 class App extends React.Component {
 
   state = {
-    loggedInUser: this.props.user
+    loggedInUser: this.props.user,
+    redirect: false
   }
 
   // user is not logged in already --> they are logging in using our React app
@@ -42,12 +43,12 @@ class App extends React.Component {
 
           {/*  ---------------------------> Landing Routing */}
           <Route exact path="/" component={LandingPage} />
-          <Route exact path="/description" component={Description} />
+          <Route exact path="/description" render={() => <Description currentUser={this.state.loggedInUser}/>}/>
           <Route exact path="/about" component={About} />
 
 
           {/*  ---------------------------> Auth Routing */}
-          <Route exact path="/auth" component={Auth} />
+          <Route exact path="/auth" render={() => <Auth currentUser={this.state.loggedInUser}/>} />
           <Route exact path="/auth/signup">
 
           <Signup updateNewUser={this.updateUser}></Signup>

@@ -3,7 +3,6 @@ const Schema   = mongoose.Schema;
 
 const journalEntrySchema = new Schema({
   entry: String,
-  // date: new Date ()
   owner: {type: Schema.Types.ObjectId, ref: 'User'} // <== !!!
 
 }, 
