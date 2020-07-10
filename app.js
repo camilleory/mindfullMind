@@ -1,21 +1,21 @@
 require('dotenv').config();
 
-const bodyParser   = require('body-parser');
+const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-const express      = require('express');
-const favicon      = require('serve-favicon');
-const hbs          = require('hbs');
-const mongoose     = require('mongoose');
-const logger       = require('morgan');
-const path         = require('path');
-const session       = require('express-session');
-const passport      = require('passport');
+const express = require('express');
+const favicon = require('serve-favicon');
+const hbs = require('hbs');
+const mongoose = require('mongoose');
+const logger = require('morgan');
+const path = require('path');
+const session = require('express-session');
+const passport = require('passport');
 
 
 require('./config/passport');
 
 mongoose
-  .connect('mongodb://localhost/mindfullmind', {useNewUrlParser: true})
+  .connect('mongodb://localhost/mindfullmind', { useNewUrlParser: true })
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -38,20 +38,20 @@ app.use(cookieParser());
 // Express View engine setup
 
 app.use(require('node-sass-middleware')({
-  src:  path.join(__dirname, 'public'),
+  src: path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public'),
   sourceMap: true
 }));
-      
+
 //Session Setup
 
-const MongoStore    = require('connect-mongo')(session);
+const MongoStore = require('connect-mongo')(session);
 app.use(session({
   secret: "doesn't matter in our case", // but it's required
   resave: false,
   saveUninitialized: false, // don't create cookie for non-logged-in user
   // MongoStore makes sure the user stays logged in also when the server restarts
-  store: new MongoStore({ mongooseConnection: mongoose.connection }) 
+  store: new MongoStore({ mongooseConnection: mongoose.connection })
 }));
 
 
@@ -74,5 +74,8 @@ app.use('/', index);
 
 const journal = require('./routes/journal')
 app.use('/rituals', journal)
+
+const spotify = require('./routes/spotify');
+app.use('/', spotify)
 
 module.exports = app;

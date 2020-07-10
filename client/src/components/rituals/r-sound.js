@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import Player from './spotify-component';
 
 //import About from './landing/About'
 
@@ -22,10 +23,8 @@ class Soundscape extends React.Component {
   render() {
     return (
       <div className="App">
-
-        <h1>Soundscape ritual</h1>
-        <p> Player </p>
-        <p> spotify </p>
+      
+<Player> </Player>
 
       </div>
     );
