@@ -16,6 +16,8 @@ import Embodiment from './components/rituals/r-body'
 import Journal from './components/rituals/r-journal'
 import Meditation from './components/rituals/r-meditation'
 import Soundscape from './components/rituals/r-sound'
+import DeepWork from './components/rituals/deep-work-logout'
+
 
 
 class App extends React.Component {
@@ -43,20 +45,20 @@ class App extends React.Component {
 
           {/*  ---------------------------> Landing Routing */}
           <Route exact path="/" component={LandingPage} />
-          <Route exact path="/description" render={() => <Description currentUser={this.state.loggedInUser}/>}/>
+          <Route exact path="/description" render={() => <Description currentUser={this.state.loggedInUser} />} />
           <Route exact path="/about" component={About} />
 
 
           {/*  ---------------------------> Auth Routing */}
-          <Route exact path="/auth" render={() => <Auth currentUser={this.state.loggedInUser}/>} />
+          <Route exact path="/auth" render={() => <Auth currentUser={this.state.loggedInUser} />} />
           <Route exact path="/auth/signup">
 
-          <Signup updateNewUser={this.updateUser}></Signup>
+            <Signup updateNewUser={this.updateUser}></Signup>
 
           </Route>
 
 
-          <Route exact path='/auth/login' render={() => <Login updateLoggedInUser={this.updateUser} currentUser={this.state.loggedInUser}/>}/>
+          <Route exact path='/auth/login' render={() => <Login updateLoggedInUser={this.updateUser} currentUser={this.state.loggedInUser} />} />
 
 
           {/*  ---------------------------> Auth Routing */}
@@ -64,13 +66,13 @@ class App extends React.Component {
           {/* Protected route: user can access only if logged in */}
 
           <Route exact path='/auth/ritual-choice' render={() => {
-            if (this.state.loggedInUser){
-              return <RitualChoice currentUser={this.state.loggedInUser}/>
+            if (this.state.loggedInUser) {
+              return <RitualChoice currentUser={this.state.loggedInUser} />
             } else {
-              return <Redirect to={{pathname: '/auth/login'}}/>
+              return <Redirect to={{ pathname: '/auth/login' }} />
             }
-          }}/>
-           
+          }} />
+
           {/* <Route exact path="/auth/rituals" component={RitualRenderSequence} /> */}
           <Route exact path="/auth/ritual-render" component={RitualRenderSequence} />
 
@@ -80,8 +82,10 @@ class App extends React.Component {
 
           <Route exact path="/auth/embodiment" component={Embodiment} />
           <Route exact path="/auth/meditation" component={Meditation} />
-          <Route exact path="/auth/journal" render ={() => <Journal currentUser = {this.loggedInUser}/>} />
+          <Route exact path="/auth/journal" render={() => <Journal currentUser={this.loggedInUser} />} />
           <Route exact path="/auth/soundscape" component={Soundscape} />
+
+          <Route exact path="/auth/deep-work" component={DeepWork} />
 
 
 
