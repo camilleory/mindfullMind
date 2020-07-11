@@ -23,6 +23,9 @@ class Soundscape extends React.Component {
   render() {
     return (
       <div className="App">
+
+      <h1>Soundscape</h1>
+      <h5>Choose a song or enjoy our curated playlist</h5>
       
 <Player> </Player>
 
