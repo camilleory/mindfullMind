@@ -19,11 +19,22 @@ spotifyApi
 router.get('/tracks/:search', (req, res, next) => {
 
 
-  spotifyApi.searchTracks(req.params.search, { limit: 5 })
+  spotifyApi.searchTracks(req.params.search, { limit: 1 })
     .then(function (data) {
-      console.log('Search by "Love"', data.body);
+      console.log('SPOTIFY Search results in tracks.items', data.body.tracks.items);
+      console.log('SPOTIFY Search results in first tracks.item', data.body.tracks.items[0].artists);
 
-      const allIds = data.body.tracks.items.map(i => "https://open.spotify.com/embed/track/" + i.id)
+      const allIds = data.body.tracks.items.map(i => {
+
+        return {
+          link: "https://open.spotify.com/embed/track/" + i.id,
+          name: i.name
+
+        }
+
+
+
+      })
 
       res.json(allIds)
 

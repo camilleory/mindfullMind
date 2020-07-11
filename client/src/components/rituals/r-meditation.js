@@ -22,9 +22,12 @@ class Meditation extends React.Component {
   render() {
     return (
       <div className="App">
-      
-<h1>Meditation ritual</h1>
-<p> Here we tell you all about meditation </p>
+
+        <h1>Meditation Ritual</h1>
+        <p> Here we tell you all about meditation </p>
+
+        <iframe src="https://player.twitch.tv/?channel=endel&parent=localhost" frameborder="0" allowfullscreen="true" scrolling="no" autoPlay="false" height="300" width="300"  ></iframe>
+
 
       </div>
     );
