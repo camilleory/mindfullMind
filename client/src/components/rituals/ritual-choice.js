@@ -144,8 +144,8 @@ class RitualChoice extends React.Component {
 
     //----------------------> deep route path
     let deepWorkButton = (
-      <button className="btn btn-success" onClick={this.nextRitualHandler}>
-        Deep Work
+      <button className="btn btn-success" >
+        <Link to='/auth/deep-work'>Deep Work</Link>
       </button>
     );
 
