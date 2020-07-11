@@ -80,7 +80,7 @@ class App extends React.Component {
 
           <Route exact path="/auth/embodiment" component={Embodiment} />
           <Route exact path="/auth/meditation" component={Meditation} />
-          <Route exact path="/auth/journal" component={Journal} />
+          <Route exact path="/auth/journal" render ={() => <Journal currentUser = {this.loggedInUser}/>} />
           <Route exact path="/auth/soundscape" component={Soundscape} />
 
 

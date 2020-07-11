@@ -11,48 +11,47 @@ class Journal extends React.Component {
     prompts: false,
     entriesList: [],
     loading:true,
-    showEntries: false
+    showEntries: false,
+
   }
 
   // Display text area if button is clicked
-    displayTextArea = () => {
-      this.setState({
-        freeflow: true,
-        prompts: false
-      })
-    }
+  displayTextArea = () => {
+    this.setState({
+      freeflow: true,
+      prompts: false
+    })
+  }
 
   // Display prompts if button is clicked
-    displayPrompts = () => {
+  displayPrompts = () => {
+    this.setState({
+      freeflow: true,
+      prompts: true
+    })
+  }
+
+  // Save entry into state and DB when submit is clicked
+  saveEntry = (event) => {
+    event.preventDefault();
+    const entry = this.state.entry
+       
+    axios.post('/rituals/journal',{entry})
+    .then(response =>{
       this.setState({
-        freeflow: true,
-        prompts: true
+        entriesList: [response.data, ...this.state.entriesList],
+        entry: "",
+        owner: "",
       })
-    }
+    console.log(response.data)
+    })
+  }
 
-    // Save entry into state and DB when submit is clicked
-    saveEntry = (event) => {
-      event.preventDefault();
-      const entry = this.state.entry
-     
-      
-      axios.post('/rituals/journal',{entry})
-      .then(response =>{
-        this.setState({
-          entriesList: [response.data, ...this.state.entriesList],
-          entry: "",
-          owner: "",
-        })
-        console.log(response.data)
-      })
-
-
-    }
-    //Getting user input
-    handleChange = (event) => {
-      const { name, value } = event.target;
-      this.setState({ [name]: value });
-    }
+  //Getting user input
+  handleChange = (event) => {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
+  }
 
     //Getting journal entries from database (also when updating)
     componentDidMount() {
@@ -75,25 +74,28 @@ class Journal extends React.Component {
     })
   }
 
-    // Update entry
+    // Update entry and get entries from DB : here we want only the ones with the user ID
     updateEntry =(response) => {
       axios.get('/rituals/journal').then((resp) => {
-        console.log(resp.data)
+        console.log(resp.data.owner)
         this.setState({
-          entriesList: resp.data.reverse(),
+          entriesList: resp.data.reverse(), 
           loading: false
         })
       })
     }
-
+    // filter(el => el.owner === this.props.currentUser._id)
+   
   render() {
+
+
     return (
       <div>
         <h4>Journal</h4>
         <p>Journal ritual is meant to let you offload the mental loop. Choose one of the options for journal purposes - free flow or with specific prompts.</p>
         <hr></hr>
                 
-      {/* make text area and prompts appear when button prompts pressed */}
+        {/* make text area and prompts appear when button prompts pressed */}
         <button onClick={this.displayTextArea}>Free Flow</button> <br/>
         <button onClick={this.displayPrompts}>Deep work prompts</button> <br/>
         
@@ -112,14 +114,15 @@ class Journal extends React.Component {
             onChange={e=>this.handleChange(e)} placeholder="Write today's feeling here"></textarea> <br/>
             <button type="submit">Submit</button><hr/>
           </form>     
-      </div>: null }
+        </div>: null }
 
-          {/* Make previous entries appear when button clicked */}
-         <button onClick={this.showEntries}>Show previous entries</button>
-          {this.state.showEntries ?
+        {/* Make previous entries appear when button clicked */}
+          <button onClick={this.showEntries}>Show previous entries</button> 
+        {this.state.showEntries ?
           this.state.entriesList.map((c) => <Entry removeEntry = {this.removeEntry} updateEntry={this.updateEntry} entry={c.entry} update={c.updatedAt.slice(0, 16).replace("T", ", ")} key = {c._id} _id={c._id}></Entry>)
-            : null}
-
+          : null}
+         
+           
       </div>
     );
   }

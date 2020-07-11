@@ -16,6 +16,7 @@
     "express": "^4.16.3",
     "express-session": "^1.17.1",
     "hbs": "^4.0.1",
+    "moment": "^2.27.0",
     "mongoose": "^5.2.10",
     "mongoose-findorcreate": "^3.0.0",
     "morgan": "^1.9.0",
@@ -24,8 +25,10 @@
     "passport-local": "^1.0.0",
     "passport-spotify": "^1.1.0",
     "react-router-dom": "^5.2.0",
+    "react-sound": "^1.2.0",
     "serve-favicon": "^2.5.0",
-    "spotify-web-api-node": "^4.0.0"
+    "spotify-web-api-node": "^4.0.0",
+    "uifx": "^2.0.7"
   },
   "devDependencies": {
     "nodemon": "^1.12.1"
