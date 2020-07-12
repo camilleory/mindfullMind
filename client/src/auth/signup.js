@@ -67,7 +67,7 @@ class Signup extends React.Component {
           <input type="email" name="email" value={this.state.email} required onChange={e => this.handleChange(e)} />
 
           <label>Password:</label>
-          <input name="password" value={this.state.password} required onChange={e => this.handleChange(e)} />
+          <input name="password" type="password" value={this.state.password} required onChange={e => this.handleChange(e)} />
 
           <input type="submit" value="Signup" />
         </form>
