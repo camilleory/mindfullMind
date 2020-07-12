@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import moment from 'moment';
 import UIfx from 'uifx';
 import tickAudio from './A-Tone-His_Self-1266414414.mp3';
-
+import axios from 'axios'
 
 const beep = new UIfx(tickAudio);
 
@@ -53,6 +53,16 @@ class DeepWork extends React.Component {
     this.time = setInterval(myTimer, 1000)
   }
 
+   // Log out
+     logoutUser = (props) =>{
+      axios.post('/api/logout', {})
+      .then(response => response.data)
+      .then(() => {
+        props.updateUser(null);  // sets the global user object to 'null'
+      })
+    }
+  
+
 
   render() {
 
@@ -84,10 +94,11 @@ class DeepWork extends React.Component {
             <button onClick={() => this.setTimer(600)}>10 minutes </button>
           </div> : null}
 
+            <Link to='/'>
+              <button onClick={() => this.logoutUser(this.props)}>Logout</button>
+            </Link>
 
 
-
-        <button> Logout </button>
       </div>
     );
   }

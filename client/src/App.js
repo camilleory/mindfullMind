@@ -85,7 +85,7 @@ class App extends React.Component {
           <Route exact path="/auth/journal" render={() => <Journal currentUser={this.loggedInUser} />} />
           <Route exact path="/auth/soundscape" component={Soundscape} />
 
-          <Route exact path="/auth/deep-work" component={DeepWork} />
+          <Route exact path="/auth/deep-work" render ={() => <DeepWork updateUser={this.updateUser}/>} />
 
 
 

@@ -111,14 +111,7 @@ class RitualChoice extends React.Component {
   };
 
   render() {
-    // Log out
-    //  logoutUser = (props) =>{
-    //   axios.post('/api/logout', {})
-    //   .then(response => response.data)
-    //   .then(() => {
-    //     props.updateUser(null);  // sets the global user object to 'null'
-    //   })
-    // }
+   
 
     let currentRitual = this.state.rituals[this.state.currentIndex];
 
@@ -219,9 +212,7 @@ class RitualChoice extends React.Component {
           </div>
         )}
 
-        {/* <Link to='/'>
-              <button onClick={() => this.logoutUser(this.props)}>Logout</button>
-            </Link> */}
+      
 
         {/* <button className="btn btn-success" onClick={this.nextRitualHandler}>
           Continue
