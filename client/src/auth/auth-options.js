@@ -21,7 +21,7 @@ class Auth extends React.Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="slide-inside">
        {/* If a user is looged in, redirect to ritual choice */}
        {this.props.currentUser ? <Redirect to="/auth/ritual-choice"></Redirect> : null}
 
