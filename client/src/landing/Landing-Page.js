@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom'
-
+import'../App.css';
 
 
 
@@ -21,15 +21,12 @@ class LandingPage extends React.Component {
 
   render() {
     return (
-      <div className="App">
+        <Link to='/description' style={{ textDecoration: 'none', color: 'black'}}>
+          <div className="slide-inside">
+            <h1>Depth Rituals</h1>
+           </div>
+        </Link>
 
-
-        <Link to='/description'>
-          <h1>Depth Rituals</h1> </Link>
-
-
-
-      </div>
     );
   }
 }

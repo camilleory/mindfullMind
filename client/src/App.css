@@ -1,42 +1,80 @@
-.App {
-  text-align: center;
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200&display=swap');
+
+  body {
+    margin: 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+
+    font-family: 'IBM Plex Sans', sans-serif;
+
+    background: linear-gradient(277deg, #ffffff, #80c8e1, #21b472);
+    background-size: 600% 600%;
+    
+    -webkit-animation: AnimationName 13s ease infinite;
+    -moz-animation: AnimationName 13s ease infinite;
+    -o-animation: AnimationName 13s ease infinite;
+    animation: AnimationName 13s ease infinite;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 24%}
+    50%{background-position:100% 77%}
+    100%{background-position:0% 24%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 24%}
+    50%{background-position:100% 77%}
+    100%{background-position:0% 24%}
+}
+@-o-keyframes AnimationName {
+    0%{background-position:0% 24%}
+    50%{background-position:100% 77%}
+    100%{background-position:0% 24%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 24%}
+    50%{background-position:100% 77%}
+    100%{background-position:0% 24%}
+}
+  
+
+
+
+
+@media (max-width: 600px) {
+  .slide-inside{
+    background-color: white;
+    padding: 40px;
+    box-sizing: border-box;
+    text-align: center;
+    margin: auto;
+    width: 95%;
+    height: 500px;
+  }  
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@media(min-width: 600px){
+  .slide-inside{
+    background-color: white;
+    padding: 40px;
+    box-sizing: border-box;
+    text-align: center;
+    margin: auto;
+    width: 95%;
+    height: 600px;
+  }  
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h1{
+  font-size: 50px;
 }
 
-.App-link {
-  color: #61dafb;
+.slide-inside a{
+  text-decoration: none;
+  color: black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-h1 {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
-}
