@@ -58,24 +58,24 @@ class Signup extends React.Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="slide-inside">
               <h4>Sign up</h4>
           { this.state.redirect ? <Redirect to="/auth/login"></Redirect> : null }
           
           <form onSubmit={this.handleFormSubmit}>
-          <label>Email:</label>
-          <input type="email" name="email" value={this.state.email} required onChange={e => this.handleChange(e)} />
+          {/* <label>Email:</label> */}
+          <input placeholder="Email" type="email" name="email" value={this.state.email} required onChange={e => this.handleChange(e)} /> <br/>
 
-          <label>Password:</label>
-          <input name="password" type="password" value={this.state.password} required onChange={e => this.handleChange(e)} />
+          {/* <label>Password:</label> */}
+          <input placeholder="Password" name="password" type="password" value={this.state.password} required onChange={e => this.handleChange(e)} /><br/>
 
-          <input type="submit" value="Signup" />
+          <input type="submit" value="Sign up" className="button" />
         </form>
         {this.state.errorMessage ? <p>{this.state.errorMessage}</p>: null}
 
           {/* <button  > <Link to='ritual-choice'> Signup </Link></button> */}
           <br/>
-          <Link to='/auth/login'> Already have an account? </Link>
+          <Link to='/auth/login'> Already have an account? Log in</Link> <br/>
 
             <a href='http://localhost:5555/api/auth/spotify'> Sign up with Spotify</a>
 
