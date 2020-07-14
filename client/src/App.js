@@ -80,10 +80,10 @@ class App extends React.Component {
           {/*  ---------------------------> CREATE /JOURNAL/:ID <--------------------
           CREATE UNIQUE USER PATHS FOR LOGGED IN USER INSTEAD OF WHAT'S BELOW */}
 
-          <Route exact path="/auth/embodiment" component={Embodiment} />
-          <Route exact path="/auth/meditation" component={Meditation} />
-          <Route exact path="/auth/journal" render={() => <Journal currentUser={this.loggedInUser} />} />
-          <Route exact path="/auth/soundscape" component={Soundscape} />
+          {/* <Route exact path="/auth/embodiment" component={Embodiment} /> */}
+          {/* <Route exact path="/auth/meditation" component={Meditation} /> */}
+          {/* <Route exact path="/auth/journal" render={() => <Journal mir="mir" currentUser={this.state.loggedInUser} />} /> */}
+          {/* <Route exact path="/auth/soundscape" component={Soundscape} /> */}
 
           <Route exact path="/auth/deep-work" render ={() => <DeepWork updateUser={this.updateUser}/>} />
 

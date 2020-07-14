@@ -121,7 +121,7 @@ class RitualChoice extends React.Component {
     } else if (currentRitual === "meditation") {
       ritualComp = <Meditation />;
     } else if (currentRitual === "journal") {
-      ritualComp = <Journal />;
+      ritualComp = <Journal currentUser={this.props.currentUser}/>;
     } else if (currentRitual === "embodiment") {
       ritualComp = <Embodiment />;
     } else if (currentRitual === "") {

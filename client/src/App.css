@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200&display=swap');
 
   body {
-    margin: 30px;
+    margin: 20px;
 
     display: flex;
     flex-direction: column;
@@ -47,15 +47,12 @@
 
 @media (max-width: 600px) {
   .slide-inside{
-    background-color: white;
+    /* background-color: white; */
     padding: 40px;
     box-sizing: border-box;
     text-align: center;
     margin: auto;
-    width: 95%;
-    height: 500px;
-    border-radius: 10px;
-
+    width: 100%;
   }  
 }
 
@@ -68,7 +65,7 @@
     margin: auto;
     width: 95%;
     height: 600px;
-    border-radius: 10px;
+    margin: auto;
 
   }  
 }
@@ -82,12 +79,31 @@ h1{
   color: black;
 }
 
-.button{
+.button-white{
+  margin: 20px 10px 10px 10px;
   padding: 10px;
-  background-color: #ADD8E6;
-  border: none;
-  border-radius: 10%;
+  background-color: white;
+  opacity: 0.4;
+  border: 1px solid black;
+  color: black;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+.button-black{
+  margin: 10px;
+  padding: 10px;
+  background-color: black;
+  border: 2px solid black;
   color: white;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+#background{
+
 }
 
 .button {
@@ -101,9 +117,30 @@ a:hover{
   color: #ADD8E6;
 }
 
-input{
-  padding: 5px;
-  margin: 5px;
-  border: 2px solid #ADD8E6;
-  border-radius: 5px;
+.input-auth{
+  background-color: transparent;
+  padding: 5px 5px 2px 0px;
+  margin: 10px;
+  border: none;
+  border-bottom: 1px solid black;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+::placeholder{
+color: #D3D3D3;
+font-size: 18px;
+}
+
+.p-auth{
+  font-size: 15px;
+}
+
+.error-message{
+  color: black;
+  font-size: 10px;
+}
+
+h4{
+  font-size: 25px;
 }

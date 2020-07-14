@@ -43,23 +43,21 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="slide-inside">
         <h4>Log in</h4>
         {/* If there is a user logged in, redirect to ritual choice  */}
         {this.props.currentUser ? <Redirect to="/auth/ritual-choice"></Redirect> : null}
         { this.state.redirect ? <Redirect to="/auth/ritual-choice"></Redirect> : null }
 
         <form onSubmit={this.handleFormSubmit}>
-          <label>Email:</label>
-          <input type="text" name="email" value={this.state.email} required onChange={ e => this.handleChange(e)}/>
-          <label>Password:</label>
-          <input name="password" type="password" value={this.state.password} required onChange={ e => this.handleChange(e)} />
-          
-          <input type="submit" value="Login" />
-          
+          <input className="input-auth" placeholder="Email" type="text" name="email" value={this.state.email} required onChange={ e => this.handleChange(e)}/>
+          <input className="input-auth" placeholder="Password" name="password" type="password" value={this.state.password} required onChange={ e => this.handleChange(e)} />
+          {this.state.errorMessage ? <p className="error-message">{this.state.errorMessage}</p>: null}
+          <button type="submit" value="Sign up" className="button-white">Log in</button>          
         </form>
-          {this.state.errorMessage ? <p>{this.state.errorMessage}</p>: null}
-        <Link to='/auth/signup'> Don't have an account? </Link>
+        <a href='http://localhost:5555/api/auth/spotify'> <button className="button-black">
+        Log in with Spotify</button></a>
+        <Link to='/auth/signup'> <p className="p-auth">Don't have an account?<br/><b>Sign up</b></p></Link>
 
       </div>
 
