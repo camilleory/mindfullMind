@@ -21,7 +21,7 @@ class Description extends React.Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="slide-inside">
 
         {/* Tapping/Clicking on secription text leads to signup/login */}
         <Link to='/auth'> 
