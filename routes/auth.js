@@ -34,7 +34,7 @@ authRoutes.post('/signup', (req, res, next) => {
         }
 
         if (foundUser) {
-            res.status(400).json({ message: 'Email already taken.' });
+            res.status(400).json({ message: 'This email address is already taken.' });
             return;
         }
   

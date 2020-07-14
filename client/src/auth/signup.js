@@ -59,25 +59,27 @@ class Signup extends React.Component {
   render() {
     return (
       <div className="slide-inside">
-              <h4>Sign up</h4>
-          { this.state.redirect ? <Redirect to="/auth/login"></Redirect> : null }
+          <h4>Sign up</h4>
+          {this.state.redirect ? <Redirect to="/auth/login"></Redirect> : null }
           
           <form onSubmit={this.handleFormSubmit}>
-          {/* <label>Email:</label> */}
-          <input placeholder="Email" type="email" name="email" value={this.state.email} required onChange={e => this.handleChange(e)} /> <br/>
+            <input className="input-auth" placeholder="Email" type="email" name="email" value={this.state.email} required onChange={e => this.handleChange(e)} /> <br/>
 
-          {/* <label>Password:</label> */}
-          <input placeholder="Password" name="password" type="password" value={this.state.password} required onChange={e => this.handleChange(e)} /><br/>
+            <input className="input-auth" placeholder="Password" name="password" type="password" value={this.state.password} required onChange={e => this.handleChange(e)} /><br/>
 
-          <input type="submit" value="Sign up" className="button" />
-        </form>
-        {this.state.errorMessage ? <p>{this.state.errorMessage}</p>: null}
+            {this.state.errorMessage ? <p className="error-message">{this.state.errorMessage}</p>: null}
 
-          {/* <button  > <Link to='ritual-choice'> Signup </Link></button> */}
+            <button type="submit" value="Sign up" className="button-white">Sign up</button>
+          </form>
+        
+        
+
+        <a id="background" href='http://localhost:5555/api/auth/spotify'> <button className="button-black">
+        Sign up with Spotify</button></a>
           <br/>
-          <Link to='/auth/login'> Already have an account? Log in</Link> <br/>
+          <Link to='/auth/login'><p className="p-auth">Already have an account?<br></br><b>Log in</b></p></Link> <br/>
 
-            <a href='http://localhost:5555/api/auth/spotify'> Sign up with Spotify</a>
+          
 
       </div>
     );

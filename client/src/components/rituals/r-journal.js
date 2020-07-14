@@ -77,17 +77,17 @@ class Journal extends React.Component {
     // Update entry and get entries from DB : here we want only the ones with the user ID
     updateEntry =(response) => {
       axios.get('/rituals/journal').then((resp) => {
-        console.log(resp.data.owner)
+        console.log("this is the data", resp.data)
         this.setState({
-          entriesList: resp.data.reverse(), 
+          entriesList: resp.data.filter(el => el.owner === this.props.currentUser._id), 
           loading: false
         })
       })
     }
-    // filter(el => el.owner === this.props.currentUser._id)
    
   render() {
 
+    console.log('props', this.props)
 
     return (
       <div>
