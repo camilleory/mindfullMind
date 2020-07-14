@@ -13,20 +13,23 @@ class RitualChoice extends React.Component {
   state = {
     rituals: [],
     currentIndex: -1,
-    continueButton: false,
     deepWorkButton: false,
     showheader: true,
-    ShowDeepWork: false
+    ShowDeepWork: false,
+    beginButton: false,
+
   };
 
   onChangeMeditation = () => {
     if (this.state.rituals.includes("meditation")) {
       this.setState({
-        rituals: this.state.rituals.filter(r => r !== "meditation")
+        rituals: this.state.rituals.filter(r => r !== "meditation"),
+
       });
     } else {
       this.setState({
-        rituals: this.state.rituals.concat("meditation")
+        rituals: this.state.rituals.concat("meditation"),
+
       });
     }
   };
@@ -73,7 +76,7 @@ class RitualChoice extends React.Component {
 
 
 
-  // Submit Button
+  // Begin Button functionality
   clickHandler = e => {
     //e.preventDefault();
     this.setState({
@@ -110,8 +113,11 @@ class RitualChoice extends React.Component {
     e.preventDefault();
   };
 
+
+
+
   render() {
-   
+
 
     let currentRitual = this.state.rituals[this.state.currentIndex];
 
@@ -127,6 +133,16 @@ class RitualChoice extends React.Component {
     } else if (currentRitual === "") {
       ritualComp = { deepWorkButton };
     }
+
+
+    // Begin button
+    let beginButton = (
+      <button className="btn btn-success" onClick={this.clickHandler}>
+        Begin
+    </button>
+    )
+
+    // Continue Button
 
     let continueButton = (
       <button className="btn btn-success" onClick={this.nextRitualHandler}>
@@ -147,7 +163,7 @@ class RitualChoice extends React.Component {
     return (
       <div className="App">
         {/* conditional component rendering in ReactJS
-      && if this.state.showheader is true, then dun the second part of the && which is the form
+      && if this.state.showheader is true, then run the second part of the && which is the form
       */}
 
         {this.state.showheader && (
@@ -203,20 +219,17 @@ class RitualChoice extends React.Component {
                 </label>
               </div>
 
-              <div className="form-group">
-                <button className="btn btn-success" onClick={this.clickHandler}>
-                  Begin
-                </button>
-              </div>
             </form>
+
+            {this.state.rituals.length !== 0 && beginButton}
+
           </div>
+
+
+
+
         )}
 
-      
-
-        {/* <button className="btn btn-success" onClick={this.nextRitualHandler}>
-          Continue
-            </button> */}
 
         {ritualComp}
 
