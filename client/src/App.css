@@ -1,76 +1,114 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Spectral:ital,wght@0,400;0,600;0,700;0,800;1,300;1,600;1,800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&display=swap');
 
-  body {
-    margin: 20px;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: stretch;
 
-    font-family: 'IBM Plex Sans', sans-serif;
 
-    background: linear-gradient(277deg, #ffffff, #80c8e1, #21b472);
-    background-size: 600% 600%;
-    
-    -webkit-animation: AnimationName 13s ease infinite;
-    -moz-animation: AnimationName 13s ease infinite;
-    -o-animation: AnimationName 13s ease infinite;
-    animation: AnimationName 13s ease infinite;
+
+body {
+  margin: 20px;
+  height: 100%;
+
+
+
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: stretch; */
+
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+
+  font-family: 'IBM Plex Sans', sans-serif;
+
+  background: linear-gradient(277deg, #ffffff, #80c8e1, #21b472);
+  background-size: 600% 600%;
+
+  -webkit-animation: AnimationName 13s ease infinite;
+  -moz-animation: AnimationName 13s ease infinite;
+  -o-animation: AnimationName 13s ease infinite;
+  animation: AnimationName 13s ease infinite;
 }
 
 @-webkit-keyframes AnimationName {
-    0%{background-position:0% 24%}
-    50%{background-position:100% 77%}
-    100%{background-position:0% 24%}
+  0% {
+    background-position: 0% 24%
+  }
+
+  50% {
+    background-position: 100% 77%
+  }
+
+  100% {
+    background-position: 0% 24%
+  }
 }
+
 @-moz-keyframes AnimationName {
-    0%{background-position:0% 24%}
-    50%{background-position:100% 77%}
-    100%{background-position:0% 24%}
+  0% {
+    background-position: 0% 24%
+  }
+
+  50% {
+    background-position: 100% 77%
+  }
+
+  100% {
+    background-position: 0% 24%
+  }
 }
+
 @-o-keyframes AnimationName {
-    0%{background-position:0% 24%}
-    50%{background-position:100% 77%}
-    100%{background-position:0% 24%}
+  0% {
+    background-position: 0% 24%
+  }
+
+  50% {
+    background-position: 100% 77%
+  }
+
+  100% {
+    background-position: 0% 24%
+  }
 }
+
 @keyframes AnimationName {
-    0%{background-position:0% 24%}
-    50%{background-position:100% 77%}
-    100%{background-position:0% 24%}
+  0% {
+    background-position: 0% 24%
+  }
+
+  50% {
+    background-position: 100% 77%
+  }
+
+  100% {
+    background-position: 0% 24%
+  }
 }
-  
+
 
 
 
 
 @media (max-width: 600px) {
-  .slide-inside{
+  .slide-inside {
     /* background-color: white; */
     padding: 40px;
     box-sizing: border-box;
     text-align: center;
     margin: auto;
     width: 100%;
-  }  
-
-  .journal-input{
-    margin: 20px 0px 20px 0px;
-    width: 100%;
-  }
-
-  .journalImg{
-    height: 15px;
-    padding: 3px;
-  }
-  #edit-icons{
-    justify-content: flex-end;
   }
 }
 
-@media(min-width: 600px){
-  .slide-inside{
+@media(min-width: 600px) {
+  .slide-inside {
     background-color: white;
     padding: 40px;
     box-sizing: border-box;
@@ -80,19 +118,169 @@
     height: 600px;
     margin: auto;
 
-  }  
+  }
 }
 
-h1{
-  font-size: 50px;
+
+/* ------------------------> LANDING PAGE */
+
+
+
+h1 {
+  display: flex;
+
+  font-size: 80px;
+  font-family: 'Philosopher', sans-serif;
+  /* -webkit-text-stroke: white 1px; */
+  font-weight: 600;
+  opacity: 0.3;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: 0px
 }
 
-.slide-inside a{
+#landing {
+  padding-top: 150px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+}
+
+@media(min-width: 745px){
+  h1{
+    font-size: 100px;
+  }
+  #landing {
+    padding-top: 250px;
+
+  }
+
+
+
+}
+
+/* ------------------------> DESCRIPTION PAGE */ 
+#second-Landing {
+
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: 600;
+  color: red;
+  opacity: 40%;
+}
+
+/* #landing-text{
+  color:red;
+  opacity: 40%;
+} */
+
+
+/* when it's at least 560 do this: */
+@media(min-width: 745px){
+  #second-Landing{
+    /* padding-top: 100px; */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  
+    text-decoration: none;
+    color:red;
+    opacity: 40%;
+    font-size: 150px;
+    font-weight: 600;
+  
+    /* max-width: 700px; */
+  }
+
+}
+
+
+/* ------------------------> ABOUT PAGE */
+
+.about{
+  padding-top: 80px;
+  padding-bottom: 20px;
+}
+
+#about-links{
+padding: 0px;
+margin: 5px;
+font-size: 35px
+
+}
+
+.about-page{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: center;
+  align-items: left;
+  align-content: center;
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: 600;
+  color: grey;
+  /* opacity: 40%; */
+}
+
+ul {
+  list-style-type: none;
+  padding: 0px;
+  font-size: 20px;
+
+}
+
+li{
+  margin-bottom: 3px;
+  padding: 0px;
+  font-size: 25px;
+}
+
+/* ---------------------- FIX ON HOVER */
+/* ---------------------- DROP DOWN RESOURCES */
+.resources-disclaimer{
+  display: none
+}
+
+span.further-reources:hover .resources-disclaimer {
+display: block
+}
+
+@media(min-width: 745px){
+
+  .about-page{
+    padding-left: 70px;
+    max-width: 500px;
+  }
+}
+
+
+
+
+
+
+
+.slide-inside a {
   text-decoration: none;
   color: black;
 }
 
-.button-white{
+.button-white {
   margin: 20px 10px 10px 10px;
   padding: 10px;
   background-color: white;
@@ -103,7 +291,7 @@ h1{
   font-size: 18px;
 }
 
-.button-black{
+.button-black {
   margin: 10px;
   padding: 10px;
   background-color: black;
@@ -114,22 +302,21 @@ h1{
   font-size: 18px;
 }
 
-#background{
-
-}
+#background {}
 
 .button {
   transition-duration: 0.4s;
 }
-.button:hover{
-    background-color: #AFEEEE;
+
+.button:hover {
+  background-color: #AFEEEE;
 }
 
-a:hover{
+a:hover {
   color: #ADD8E6;
 }
 
-.input-auth{
+.input-auth {
   background-color: transparent;
   padding: 5px 5px 2px 0px;
   margin: 10px;
@@ -139,20 +326,24 @@ a:hover{
   box-sizing: border-box;
 }
 
-::placeholder{
-color: #D3D3D3;
-font-size: 18px;
+::placeholder {
+  color: #D3D3D3;
+  font-size: 18px;
 }
 
-.p-auth{
+.p-auth {
   font-size: 15px;
 }
 
-.error-message{
+.error-message {
   color: black;
   font-size: 10px;
 }
 
-h4{
+h4 {
   font-size: 25px;
 }
+
+
+
+/* -------------------------------> Landing Page  */

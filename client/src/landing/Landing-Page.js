@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom'
-import'../App.css';
+import '../App.css';
 
 
 
@@ -20,13 +20,19 @@ class LandingPage extends React.Component {
 
 
   render() {
-    return (
-        <Link to='/description' style={{ textDecoration: 'none', color: 'black'}}>
-          <div className="slide-inside">
-            <h1>Depth Rituals</h1>
-           </div>
-        </Link>
 
+    return (
+
+
+      <div id="landing">
+
+        <Link to='/description'style={{ color: 'inherit', textDecoration: 'inherit' }} >
+
+          <h1>DEPTH
+              RITUALS</h1>
+
+        </Link>
+      </div>
     );
   }
 }

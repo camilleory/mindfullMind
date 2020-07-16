@@ -38,7 +38,7 @@ class App extends React.Component {
   render() {
 
     return (
-      <div className="App">
+      <div className="App" >
 
 
         <Switch>
@@ -86,13 +86,6 @@ class App extends React.Component {
           {/* <Route exact path="/auth/soundscape" component={Soundscape} /> */}
 
           <Route exact path="/auth/deep-work" render ={() => <DeepWork updateUser={this.updateUser}/>} />
-
-
-
-
-
-
-
 
           {/* added to display task details page: */}
           {/* <Route exact path="/tasks/:taskId" component={TaskDetails} /> <== !!! */}
