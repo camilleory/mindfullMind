@@ -56,15 +56,17 @@ class Entry extends React.Component {
        {this.state.showEditForm ? 
        <form onSubmit={this.handleFormSubmit}>
          <h4>{this.props.update}</h4>
-         <input type="text" name="entry" value ={this.state.entry} onChange={e => this.handleChangeEntry(e)}>
-         </input>
+         <textarea type="text" name="entry" value ={this.state.entry} onChange={e => this.handleChangeEntry(e)}>
+         </textarea>
          <button type="submit" value="submit">Edit</button>
        </form>
        :<div>
-        <h4>{this.props.update}</h4>
+        <h5>{this.props.update}</h5>
         <p>{this.props.entry}</p>
-        <button onClick={this.editHandler}>Edit</button>
-        <button onClick={this.deleteHandler}>Delete</button>
+        <div id="edit-icons">
+        <img className="journalImg" src="https://img.icons8.com/android/24/000000/edit.png" onClick={this.editHandler}/>
+        <img className="journalImg"src="https://img.icons8.com/windows/32/000000/delete-forever.png" onClick={this.deleteHandler}/>        
+        </div>
         </div>}
       </div>
   )

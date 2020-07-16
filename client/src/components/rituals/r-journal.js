@@ -61,7 +61,8 @@ class Journal extends React.Component {
     // Show previous entries when button is clicked
     showEntries = () => {
       this.setState({
-        showEntries: !this.state.showEntries
+        showEntries: !this.state.showEntries,
+        // entriesStatus: "Show"
       })
     }
 
@@ -90,7 +91,7 @@ class Journal extends React.Component {
     console.log('props', this.props)
 
     return (
-      <div>
+      <div className="slide-inside">
         <h4>Journal</h4>
         <p>Journal ritual is meant to let you offload the mental loop. Choose one of the options for journal purposes - free flow or with specific prompts.</p>
         <hr></hr>
@@ -110,14 +111,15 @@ class Journal extends React.Component {
         { this.state.freeflow ? 
         <div>
           <form onSubmit = {this.saveEntry}> 
-            <textarea name = "entry" value = {this.state.entry}
+            <textarea className="journal-input" name = "entry" value = {this.state.entry}
             onChange={e=>this.handleChange(e)} placeholder="Write today's feeling here"></textarea> <br/>
             <button type="submit">Submit</button><hr/>
           </form>     
-        </div>: null }
+        </div>: null}
 
         {/* Make previous entries appear when button clicked */}
-          <button onClick={this.showEntries}>Show previous entries</button> 
+        {this.state.entriesList.length > 0 ? <button onClick={this.showEntries}>Show previous entries</button> 
+        : null}
         {this.state.showEntries ?
           this.state.entriesList.map((c) => <Entry removeEntry = {this.removeEntry} updateEntry={this.updateEntry} entry={c.entry} update={c.updatedAt.slice(0, 16).replace("T", ", ")} key = {c._id} _id={c._id}></Entry>)
           : null}
