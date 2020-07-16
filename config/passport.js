@@ -52,11 +52,11 @@ passport.use(
     {
       clientID: process.env.SPOTIFY_CLIENT_ID,
       clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
-      callbackURL: 'http://localhost:5555/api/auth/spotify/callback'
+      callbackURL: process.env.BASE_URL + '/api/auth/spotify/callback'
     },
-    function(accessToken, refreshToken, expires_in, profile, done) {
+    function (accessToken, refreshToken, expires_in, profile, done) {
       console.log("profile", profile)
-      User.findOrCreate({ spotifyId: profile.id ,spotifyEmail: profile.email, display_name: profile.displayName /*images: profile.images*/ }, function(err, user) {
+      User.findOrCreate({ spotifyId: profile.id, spotifyEmail: profile.email, display_name: profile.displayName /*images: profile.images*/ }, function (err, user) {
         return done(err, user);
       });
     }
