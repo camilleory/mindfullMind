@@ -54,6 +54,19 @@
     margin: auto;
     width: 100%;
   }  
+
+  .journal-input{
+    margin: 20px 0px 20px 0px;
+    width: 100%;
+  }
+
+  .journalImg{
+    height: 15px;
+    padding: 3px;
+  }
+  #edit-icons{
+    justify-content: flex-end;
+  }
 }
 
 @media(min-width: 600px){
@@ -83,7 +96,6 @@ h1{
   margin: 20px 10px 10px 10px;
   padding: 10px;
   background-color: white;
-  opacity: 0.4;
   border: 1px solid black;
   color: black;
   width: 100%;
