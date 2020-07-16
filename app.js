@@ -15,7 +15,7 @@ const passport = require('passport');
 require('./config/passport');
 
 mongoose
-  .connect('mongodb://localhost/mindfullmind', { useNewUrlParser: true })
+  .connect(process.env.MONGODB_URI, { useNewUrlParser: true })
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -42,6 +42,9 @@ app.use(require('node-sass-middleware')({
   dest: path.join(__dirname, 'public'),
   sourceMap: true
 }));
+
+app.use(express.static(path.join(__dirname, '/client/build')));
+
 
 //Session Setup
 
@@ -77,5 +80,12 @@ app.use('/rituals', journal)
 
 const spotify = require('./routes/spotify');
 app.use('/', spotify)
+
+
+app.use((req, res, next) => {
+  // If no routes match, send them the React HTML.
+  res.sendFile(__dirname + "/client/build/index.html");
+});
+
 
 module.exports = app;
