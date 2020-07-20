@@ -43,19 +43,19 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div className="slide-inside">
-        <h4>Log in</h4>
+      <div className="slide-inside signup">
+        <h3>Log in</h3>
         {/* If there is a user logged in, redirect to ritual choice  */}
         {this.props.currentUser ? <Redirect to="/auth/ritual-choice"></Redirect> : null}
         { this.state.redirect ? <Redirect to="/auth/ritual-choice"></Redirect> : null }
 
         <form onSubmit={this.handleFormSubmit}>
-          <input className="input-auth" placeholder="Email" type="text" name="email" value={this.state.email} required onChange={ e => this.handleChange(e)}/>
+          <input className="input-auth" placeholder="Email" type="email" name="email" value={this.state.email} required onChange={ e => this.handleChange(e)}/>
           <input className="input-auth" placeholder="Password" name="password" type="password" value={this.state.password} required onChange={ e => this.handleChange(e)} />
           {this.state.errorMessage ? <p className="error-message">{this.state.errorMessage}</p>: null}
           <button type="submit" value="Sign up" className="button-white">Log in</button>          
         </form>
-        <a href={process.env.REACT_APP_BASE_URL + '/api/auth/spotify'}> <button className="button-black">
+        <a href={process.env.REACT_APP_BASE_URL + '/api/auth/spotify'}> <button className="button-black" id="spotify-button-text">
         Log in with Spotify</button></a>
         <Link to='/auth/signup'> <p className="p-auth">Don't have an account?<br/><b>Sign up</b></p></Link>
 
