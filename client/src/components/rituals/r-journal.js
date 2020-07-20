@@ -12,6 +12,7 @@ class Journal extends React.Component {
     entriesList: [],
     loading:true,
     showEntries: false,
+    next: false
 
   }
 
@@ -85,27 +86,34 @@ class Journal extends React.Component {
         })
       })
     }
-   
+    nextSlide = () => {
+      this.setState({
+        next: true
+      })
+    }
+
   render() {
 
     console.log('props', this.props)
 
     return (
       <div className="slide-inside">
-        <h4>Journal</h4>
-        <p>Journal ritual is meant to let you offload the mental loop. Choose one of the options for journal purposes - free flow or with specific prompts.</p>
+        <h1>Journal</h1>
         <hr></hr>
-                
-        {/* make text area and prompts appear when button prompts pressed */}
-        <button onClick={this.displayTextArea}>Free Flow</button> <br/>
-        <button onClick={this.displayPrompts}>Deep work prompts</button> <br/>
-        
-        { this.state.prompts ? <div>
-        <p>Prompt 1</p>
-        <p>Prompt 2</p>
-        <p>Prompt 3</p>
-        <p>Prompt 4</p>
-        </div>: null }  
+        {this.state.next ? 
+          <div>
+          {/* make text area and prompts appear when button prompts pressed */}
+          <button className="button-white" onClick={this.displayTextArea}>Free Flow</button> <br/>
+          <button className="button-white" onClick={this.displayPrompts}>Deep work prompts</button> <br/>
+          
+          {this.state.prompts ? 
+            <div>
+              <p>Prompt 1</p>
+              <p>Prompt 2</p>
+              <p>Prompt 3</p>
+            </div>
+          : null 
+        }
         
         {/* make text area appear when button free flow pressed */}
         { this.state.freeflow ? 
@@ -113,19 +121,31 @@ class Journal extends React.Component {
           <form onSubmit = {this.saveEntry}> 
             <textarea className="journal-input" name = "entry" value = {this.state.entry}
             onChange={e=>this.handleChange(e)} placeholder="Write today's feeling here"></textarea> <br/>
-            <button type="submit">Submit</button><hr/>
+            <button type="submit">Save</button><hr/>
           </form>     
-        </div>: null}
+        </div>: null
+        }
 
         {/* Make previous entries appear when button clicked */}
-        {this.state.entriesList.length > 0 ? <button onClick={this.showEntries}>Show previous entries</button> 
+        {this.state.entriesList.length > 0 ? <button className="button-white" onClick={this.showEntries}>Show previous entries</button> 
         : null}
         {this.state.showEntries ?
           this.state.entriesList.map((c) => <Entry removeEntry = {this.removeEntry} updateEntry={this.updateEntry} entry={c.entry} update={c.updatedAt.slice(0, 16).replace("T", ", ")} key = {c._id} _id={c._id}></Entry>)
           : null}
          
            
-      </div>
+        </div>
+        : 
+        
+        <a onClick={this.nextSlide}>
+          <div className="embodiment-div">
+            <p>Journal ritual is meant to let you offload the mental loop. Choose one of the options for journal purposes - free flow or with specific prompts.</p>
+          </div>
+        </a>  
+        }
+
+        </div>
+
     );
   }
 }
