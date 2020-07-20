@@ -15,6 +15,7 @@ class Embodiment extends React.Component {
     timer: false,
     numberOfSeconds: 0,
     timeOver: false,
+    next: false
   }
 
   startBodyScan = () => {
@@ -53,30 +54,51 @@ class Embodiment extends React.Component {
     this.time = setInterval(myTimer, 1000)
   }
  
+    nextClicked = () => {
+      this.setState({
+        next: true
+      })
+    }
 
   render() {
 
     const formatted = moment.utc(this.state.numberOfSeconds*1000).format('mm:ss');
 
     return (
-      <div className="App">
+      <div className="slide-inside embodiment">
 
         <h1>Embodiment</h1>
         <hr/>
-        <h2>Body scan</h2>
-        <p>The body scan method allows you to connect with you inner self, ground yourself and get a break from everyday's struggles and stimulations. </p>
-        <p>Close your eyes and scan your body from head to toes, feeling the points of tensions, just watching them. Whenever you realise you've been distracted, come back to scanning your body.</p>
-        <button onClick = {this.startBodyScan}>Start</button>
-        {this.state.start ? 
-          <div>
-          <button onClick = {() => this.setTimer(300)}>5 minutes</button>
-          <button onClick = {() => this.setTimer(600)}>10 minutes</button>
-          <button onClick = {() => this.setTimer(900)} >15 minutes</button>
-          </div> : null}
-        {this.state.timer ? <div>{formatted}</div> : null}
-        {this.state.timeOver ? <div>Well done !</div> : null}
+        {this.state.timeOver ? 
+        <div className ="embodiment-div"><h3>Well done!</h3></div>
+        :
+        this.state.timer ? <div className="embodiment-div" id="timer">{formatted}</div>
+        :
+
+        this.state.start ? 
+          <div className="start-timing">
+          <button className="button-white" onClick = {() => this.setTimer(300)}>5 minutes</button>
+          <button className="button-white" onClick = {() => this.setTimer(600)}>10 minutes</button>
+          <button className="button-white" onClick = {() => this.setTimer(900)} >15 minutes</button>
+          </div> :
+
+
+        this.state.next? 
+          <a onClick={this.startBodyScan}>
+            <div className="embodiment-div">
+              <p>Close your eyes and scan your body from head to toes, feeling the points of tensions, just watching them. Whenever you realise you've been distracted, come back to scanning your body.</p>
+            </div>
+          </a>
+        : <a onClick={this.nextClicked}>
+            <div className="embodiment-div">
+              <h2>Body scan</h2>
+              <p>The body scan method allows you to connect with you inner self, ground yourself and get a break from everyday's struggles and stimulations.</p>
+            </div>
+          </a>}
       </div>
+          
     );
+    
   }
 }
 
