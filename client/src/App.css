@@ -516,4 +516,12 @@ display: block
     padding: 40px;
 
   }
+
+  
+}
+
+.journal-input{
+  height: 200px;
+  width: 100%;
+  border: none;
 }
