@@ -403,3 +403,117 @@ display: block
   50% { color: #80c8e1; }
   100% { color: #21b472; }
 }
+
+/* -------------------------------> Embodiment  */
+
+@media(max-width: 600px){
+  h1{
+    font-size: 50px;
+  }
+  hr{
+  width: 75%;
+  border: 0;
+  border-top: white solid 0,5px;
+  border-bottom: white solid 0.1px;
+  opacity: 0.5;
+  }
+  
+
+  .embodiment-div{
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 10px;
+    margin-top: 30px;
+  }
+  .embodiment p{
+    /* text-align: justify; */
+    padding: 10px 15px 10px 15px;
+    line-height: 2;
+    color: black;
+  }
+
+  .embodiment h2{
+    font-size: 20px;
+  }
+
+  .embodiment button{
+    padding: 20px 5px ;
+
+  }
+  .start-timing{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;  
+    margin-top: 30px;
+  }
+  #timer{
+    font-family: 'Philosopher', sans-serif;
+    font-size: 50px;
+    color: white;
+    padding: 60px 10px;
+    margin: 50px 20px 10px 20px;
+  }
+  .embodiment h3{
+    color: white;
+    font-size: 40px;
+    padding: 40px;
+  }
+}
+
+@media(min-width: 600px){
+  /* h1{
+    font-size: 50px;
+  } */
+  hr{
+  width: 75%;
+  border: 0;
+  border-top: white solid 0,5px;
+  border-bottom: white solid 0.1px;
+  opacity: 0.5;
+  }
+  
+
+  .embodiment-div{
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 30px;
+    /* margin-top: 30px; */
+    width: 600px;
+    margin: auto;
+    margin-top: 50px;
+  }
+  
+  .embodiment p{
+    /* text-align: justify; */
+    padding: 10px 15px 10px 15px;
+    line-height: 2;
+    color: black;
+    font-size: 20px;
+  }
+
+  .embodiment h2{
+    font-size: 30px;
+  }
+
+  .embodiment button{
+    padding: 20px 5px ;
+
+  }
+  .start-timing{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;  
+    margin-top: 30px;
+  }
+  #timer{
+    font-family: 'Philosopher', sans-serif;
+    font-size: 70px;
+    color: white;
+    padding: 60px 10px;
+    margin: 50px 20px 10px 20px;
+  }
+  .embodiment h3{
+    color: white;
+    font-size: 40px;    
+    padding: 40px;
+
+  }
+}
