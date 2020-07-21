@@ -60,13 +60,18 @@ class Entry extends React.Component {
          </textarea>
          <button type="submit" value="submit">Edit</button>
        </form>
-       :<div>
-        <h5>{this.props.update}</h5>
-        <p>{this.props.entry}</p>
-        <div id="edit-icons">
-        <img className="journalImg" src="https://img.icons8.com/android/24/000000/edit.png" onClick={this.editHandler}/>
-        <img className="journalImg"src="https://img.icons8.com/windows/32/000000/delete-forever.png" onClick={this.deleteHandler}/>        
-        </div>
+       :
+        <div>       
+          <div className="entry-div">
+            <h5>{this.props.update}</h5>
+            <div id="edit-icons">
+              <img className="journalImg" src="https://img.icons8.com/android/24/000000/edit.png" onClick={this.editHandler}/>
+              <img className="journalImg" src="https://img.icons8.com/windows/32/000000/delete-forever.png" onClick={this.deleteHandler}/>        
+            </div>
+          </div>
+
+            <p>{this.props.entry}</p>
+        
         </div>}
       </div>
   )

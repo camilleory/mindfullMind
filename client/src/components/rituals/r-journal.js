@@ -81,7 +81,7 @@ class Journal extends React.Component {
       axios.get('/rituals/journal').then((resp) => {
         console.log("this is the data", resp.data)
         this.setState({
-          entriesList: resp.data.filter(el => el.owner === this.props.currentUser._id), 
+          entriesList: resp.data.filter(el => el.owner === this.props.currentUser._id).reverse(), 
           loading: false
         })
       })
@@ -97,11 +97,11 @@ class Journal extends React.Component {
     console.log('props', this.props)
 
     return (
-      <div className="slide-inside" class="fade-in one-point-five">
+      <div class="fade-in one-point-five">
         <h1>Journal</h1>
         <hr></hr>
         {this.state.next ? 
-          <div>
+          <div className="slide-inside">
           {/* make text area and prompts appear when button prompts pressed */}
           <button className="button-white" onClick={this.displayTextArea}>Free Flow</button> <br/>
           <button className="button-white" onClick={this.displayPrompts}>Deep work prompts</button> <br/>
