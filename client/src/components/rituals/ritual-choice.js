@@ -168,10 +168,12 @@ class RitualChoice extends React.Component {
 
         {this.state.showheader && (
           <div>
-            <h4>Choose your rituals before Deep Work</h4>
+            <h4 class= "fade-in one" >Choose the Rituals</h4>
+            <p class= "fade-in one"> Order in which you choose will determine the sequence. </p>
 
             <form onSubmit={this.onSubmit}>
-              <div className="form-check">
+
+              <div className="form-check" class="check-buttons fade-in two">
                 <label className="form-check-label">
                   <input
                     type="checkbox"
@@ -179,11 +181,11 @@ class RitualChoice extends React.Component {
                     onChange={this.onChangeMeditation}
                     className="form-check-input"
                   />
-                  Meditation
+                  <p class="ritual-in-checkbox"> Meditation</p> 
                 </label>
               </div>
 
-              <div className="form-check">
+              <div className="form-check" class="check-buttons fade-in two">
                 <label className="form-check-label">
                   <input
                     type="checkbox"
@@ -191,11 +193,13 @@ class RitualChoice extends React.Component {
                     onChange={this.onChangeJournal}
                     className="form-check-input"
                   />
-                  Journal
+
+                  <p class="ritual-in-checkbox"> Journal</p>
+                  
                 </label>
               </div>
 
-              <div className="form-check">
+              <div className="form-check" class="check-buttons fade-in two">
                 <label className="form-check-label">
                   <input
                     type="checkbox"
@@ -203,11 +207,12 @@ class RitualChoice extends React.Component {
                     onChange={this.onChangeSoundscape}
                     className="form-check-input"
                   />
-                  Soundscape
+                  <p class="ritual-in-checkbox">Soundscape </p>
+                  
                 </label>
               </div>
 
-              <div className="form-check">
+              <div className="form-check" class="check-buttons fade-in two">
                 <label className="form-check-label">
                   <input
                     type="checkbox"
@@ -215,7 +220,8 @@ class RitualChoice extends React.Component {
                     onChange={this.onChangeEmbodiment}
                     className="form-check-input"
                   />
-                  Embodiment
+                  <p class="ritual-in-checkbox">Embodiment </p>
+                  
                 </label>
               </div>
 

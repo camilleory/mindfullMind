@@ -28,7 +28,7 @@ class LandingPage extends React.Component {
 
         <Link to='/description'style={{ color: 'inherit', textDecoration: 'inherit' }} >
 
-          <h1>DEPTH
+          <h1 class="fade-in one" >DEPTH
               RITUALS</h1>
 
         </Link>
