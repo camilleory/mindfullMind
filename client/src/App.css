@@ -860,16 +860,37 @@ background-color: rgba(122, 189, 105, 0.6);
 
   }
 
-
 }
 
-.journal-input {
-  height: 200px;
-  width: 100%;
-  border: none;
+@media(max-width: 600px) {
+
+  .journal-input {
+   margin: auto;
+   height: 150px;
+   width: 100%;
+   border: none;
+   outline: none;
+  }
+
+  .journalImg{
+    height: 18px;
+  }
+
+  .entry-div{
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+  }
+
+  #edit-icons{
+    display: flex;
+    width: 50px;
+    justify-content: space-between;
+  }
 }
-
-
 
 
 /* ------------------------> SOUNDSCAPE */
