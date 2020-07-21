@@ -16,24 +16,20 @@ class RitualChoice extends React.Component {
     deepWorkButton: false,
     showheader: true,
     ShowDeepWork: false,
-    beginButton: false,
-
+    beginButton: false
   };
 
   onChangeMeditation = () => {
     if (this.state.rituals.includes("meditation")) {
       this.setState({
-        rituals: this.state.rituals.filter(r => r !== "meditation"),
-
+        rituals: this.state.rituals.filter(r => r !== "meditation")
       });
     } else {
       this.setState({
-        rituals: this.state.rituals.concat("meditation"),
-
+        rituals: this.state.rituals.concat("meditation")
       });
     }
   };
-
 
   onChangeJournal = () => {
     if (this.state.rituals.includes("journal")) {
@@ -47,8 +43,6 @@ class RitualChoice extends React.Component {
     }
   };
 
-
-
   onChangeEmbodiment = () => {
     if (this.state.rituals.includes("embodiment")) {
       this.setState({
@@ -61,7 +55,6 @@ class RitualChoice extends React.Component {
     }
   };
 
-
   onChangeSoundscape = () => {
     if (this.state.rituals.includes("soundscape")) {
       this.setState({
@@ -73,8 +66,6 @@ class RitualChoice extends React.Component {
       });
     }
   };
-
-
 
   // Begin Button functionality
   clickHandler = e => {
@@ -113,12 +104,7 @@ class RitualChoice extends React.Component {
     e.preventDefault();
   };
 
-
-
-
   render() {
-
-
     let currentRitual = this.state.rituals[this.state.currentIndex];
 
     let ritualComp;
@@ -127,115 +113,117 @@ class RitualChoice extends React.Component {
     } else if (currentRitual === "meditation") {
       ritualComp = <Meditation />;
     } else if (currentRitual === "journal") {
-      ritualComp = <Journal currentUser={this.props.currentUser}/>;
+      ritualComp = <Journal currentUser={this.props.currentUser} />;
     } else if (currentRitual === "embodiment") {
       ritualComp = <Embodiment />;
     } else if (currentRitual === "") {
       ritualComp = { deepWorkButton };
     }
 
-
     // Begin button
     let beginButton = (
-      <button className="btn btn-success" onClick={this.clickHandler}>
+      <button className="btn " class="functional-button" onClick={this.clickHandler}>
         Begin
-    </button>
-    )
+      </button>
+    );
 
     // Continue Button
 
     let continueButton = (
-      <button className="btn btn-success" onClick={this.nextRitualHandler}>
+      <button className="btn " class="functional-button fade-in one-point-five" onClick={this.nextRitualHandler}>
         Continue
       </button>
     );
 
-
     //----------------------> deep route path
     let deepWorkButton = (
-      <button className="btn btn-success" >
-        <Link to='/auth/deep-work'>Deep Work</Link>
+      <button className="btn" class="functional-button fade-in one-point-five"> 
+        <Link to="/auth/deep-work" style={{ color: 'inherit', textDecoration: 'inherit' }}> Deep Work </Link>
       </button>
     );
 
     // console.log("Rituals:", rituals)
 
     return (
-      <div className="App">
+      <div className="App" class="ritual-choice-rendering fade-in one">
         {/* conditional component rendering in ReactJS
       && if this.state.showheader is true, then run the second part of the && which is the form
       */}
 
         {this.state.showheader && (
           <div>
-            <h4 class= "fade-in one" >Choose the Rituals</h4>
-            <p class= "fade-in one"> Order in which you choose will determine the sequence. </p>
+            <div>
+              <h2 class="fade-in one ritual-choice-text">Choose the Rituals</h2>{" "}
+            </div>
+            <div>
+              <h3 class="fade-in one ritual-choice-subtext">
+               
+                Order in which you choose will determine the sequence.
+              </h3>
+            </div>
 
-            <form onSubmit={this.onSubmit}>
+            <div>
+              {" "}
+              <form onSubmit={this.onSubmit} class="ritual-choice-rendering fade-in one-point-five">
+                <div className="form-check" class="check-buttons  ">
 
-              <div className="form-check" class="check-buttons fade-in two">
-                <label className="form-check-label">
-                  <input
-                    type="checkbox"
-                    checked={this.state.isMeditation}
-                    onChange={this.onChangeMeditation}
-                    className="form-check-input"
-                  />
-                  <p class="ritual-in-checkbox"> Meditation</p> 
-                </label>
-              </div>
+                  <label className="form-check-label" class="">
+                    <input
+                      type="checkbox"
+                      checked={this.state.isMeditation}
+                      onChange={this.onChangeMeditation}
+                      className="form-check-input"
+                      
+                     
+                    />
 
-              <div className="form-check" class="check-buttons fade-in two">
-                <label className="form-check-label">
-                  <input
-                    type="checkbox"
-                    checked={this.state.isJournal}
-                    onChange={this.onChangeJournal}
-                    className="form-check-input"
-                  />
 
-                  <p class="ritual-in-checkbox"> Journal</p>
-                  
-                </label>
-              </div>
+                    <p class="ritual-in-checkbox center-checkbox"> Meditation</p>
+                  </label>
+                </div>
 
-              <div className="form-check" class="check-buttons fade-in two">
-                <label className="form-check-label">
-                  <input
-                    type="checkbox"
-                    checked={this.state.isSoundscape}
-                    onChange={this.onChangeSoundscape}
-                    className="form-check-input"
-                  />
-                  <p class="ritual-in-checkbox">Soundscape </p>
-                  
-                </label>
-              </div>
+                <div className="form-check" class="check-buttons ">
+                  <label className="form-check-label">
+                    <input
+                      type="checkbox"
+                      checked={this.state.isJournal}
+                      onChange={this.onChangeJournal}
+                      className="form-check-input"
+                    />
 
-              <div className="form-check" class="check-buttons fade-in two">
-                <label className="form-check-label">
-                  <input
-                    type="checkbox"
-                    checked={this.state.isEmbodiment}
-                    onChange={this.onChangeEmbodiment}
-                    className="form-check-input"
-                  />
-                  <p class="ritual-in-checkbox">Embodiment </p>
-                  
-                </label>
-              </div>
+                    <p class="ritual-in-checkbox"> Journal</p>
+                  </label>
+                </div>
 
-            </form>
+                <div className="form-check" class="check-buttons ">
+                  <label className="form-check-label">
+                    <input
+                      type="checkbox"
+                      checked={this.state.isSoundscape}
+                      onChange={this.onChangeSoundscape}
+                      className="form-check-input"
+                    />
+                    <p class="ritual-in-checkbox">Soundscape </p>
+                  </label>
+                </div>
 
-            {this.state.rituals.length !== 0 && beginButton}
+                <div className="form-check" class="check-buttons ">
+                  <label className="form-check-label">
+                    <input
+                      type="checkbox"
+                      checked={this.state.isEmbodiment}
+                      onChange={this.onChangeEmbodiment}
+                      className="form-check-input"
+                    />
+                    <p class="ritual-in-checkbox">Embodiment </p>
+                  </label>
+                </div>
+              </form>{" "}
+            </div>
 
+            <div>{this.state.rituals.length !== 0 && beginButton}</div>
           </div>
-
-
-
-
         )}
-
 
         {ritualComp}
 

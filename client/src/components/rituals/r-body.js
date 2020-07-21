@@ -65,7 +65,7 @@ class Embodiment extends React.Component {
     const formatted = moment.utc(this.state.numberOfSeconds*1000).format('mm:ss');
 
     return (
-      <div className="slide-inside embodiment">
+      <div className="slide-inside embodiment" class="fade-in one-point-five">
 
         <h1>Embodiment</h1>
         <hr/>

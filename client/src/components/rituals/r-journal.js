@@ -97,7 +97,7 @@ class Journal extends React.Component {
     console.log('props', this.props)
 
     return (
-      <div className="slide-inside">
+      <div className="slide-inside" class="fade-in one-point-five">
         <h1>Journal</h1>
         <hr></hr>
         {this.state.next ? 
