@@ -81,7 +81,7 @@ class Journal extends React.Component {
       axios.get('/rituals/journal').then((resp) => {
         console.log("this is the data", resp.data)
         this.setState({
-          entriesList: resp.data.filter(el => el.owner === this.props.currentUser._id), 
+          entriesList: resp.data.filter(el => el.owner === this.props.currentUser._id).reverse(), 
           loading: false
         })
       })
