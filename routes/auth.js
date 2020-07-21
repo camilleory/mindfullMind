@@ -144,7 +144,6 @@ authRoutes.get(
     // The request will be redirected to spotify for authentication, so this
     // function will not be called.
         res.redirect(process.env.BASE_URL);
-
   }
 );
 

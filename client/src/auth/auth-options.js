@@ -21,22 +21,22 @@ class Auth extends React.Component {
 
   render() {
     return (
-      <div className="slide-inside">
+      <div className="slide-inside auth-choice">
        {/* If a user is looged in, redirect to ritual choice */}
        {this.props.currentUser ? <Redirect to="/auth/ritual-choice"></Redirect> : null}
 
 
         {/* Tapping/Clicking on secription text leads to signup/login */}
-        <Link to='/auth/signup'> Signup </Link>
+        <Link to='/auth/signup'><h3>Sign up</h3></Link>
 
         <br />
 
         {/* Tapping/Clicking on secription text leads to About */}
-        <Link to='/auth/login'>Login</Link>
+        <Link to='/auth/login'><h3>Log in</h3></Link>
         <br />
 
 
-        <Link to='/description'>Go back</Link>
+        <Link to='/description'><p>go back</p></Link>
 
 
 

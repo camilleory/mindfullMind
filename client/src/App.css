@@ -18,7 +18,9 @@ body {
   align-items: center;
   align-content: center;
 
-  font-family: "IBM Plex Sans", sans-serif;
+
+  font-family: 'IBM Plex Sans', sans-serif;
+
 
   background: linear-gradient(277deg, #ffffff, #80c8e1, #21b472);
   background-size: 600% 600%;
@@ -85,9 +87,9 @@ body {
   }
 }
 
+
 @media (max-width: 600px) {
   .slide-inside {
-    /* background-color: white; */
     padding: 40px;
     box-sizing: border-box;
     text-align: center;
@@ -98,12 +100,11 @@ body {
 
 @media (min-width: 600px) {
   .slide-inside {
-    background-color: white;
     padding: 40px;
     box-sizing: border-box;
     text-align: center;
     margin: auto;
-    width: 95%;
+    width: 100%;
     height: 600px;
     margin: auto;
   }
@@ -356,31 +357,44 @@ span.further-reources:hover .resources-disclaimer {
   }
 }
 
+
+
+
+
+/* -------------------------------> Auth pages (Choice, Sigup, login)  */
+
+
 .slide-inside a {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 .button-white {
   margin: 20px 10px 10px 10px;
   padding: 10px;
-  background-color: white;
-  border: 1px solid black;
-  color: black;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid white;
+  color: white;
   width: 100%;
   box-sizing: border-box;
   font-size: 18px;
+  transition: background 0.5s ease-in-out;
+
+}
+
+.button-white:hover{
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 .button-black {
   margin: 10px;
   padding: 10px;
-  background-color: black;
-  border: 2px solid black;
-  color: white;
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 1px solid white;
   width: 100%;
   box-sizing: border-box;
   font-size: 18px;
+  transition: background 0.5s ease-in-out;
 }
 
 #background {}
@@ -393,8 +407,14 @@ span.further-reources:hover .resources-disclaimer {
   background-color: #afeeee;
 }
 
+
+
+/*  ---------------> this might need fixing*/
 a:hover {
-  color: #add8e6;
+  color: #add8e6;}
+  
+.button-black:hover{
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .input-auth {
@@ -402,13 +422,15 @@ a:hover {
   padding: 5px 5px 2px 0px;
   margin: 10px;
   border: none;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid white;
   width: 100%;
   box-sizing: border-box;
 }
 
 ::placeholder {
-  color: #d3d3d3;
+
+  color: rgba(255, 255, 255, 0.7);
+
   font-size: 18px;
 }
 
@@ -417,13 +439,25 @@ a:hover {
 }
 
 .error-message {
-  color: black;
+  color: #008080;
   font-size: 10px;
 }
 
-h4 {
-  font-size: 25px;
+
+.auth-choice h3{
+  display: flex;
+  font-size: 40px;
+  font-family: 'Philosopher', sans-serif;
+  /* -webkit-text-stroke: white 1px; */
+  font-weight: 600;
+  opacity: 0.7;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: 0px
 }
+
 
 /* -------------------------------> RITUAL CHOICE PAGE  */
 .ritual-in-checkbox {
@@ -510,5 +544,190 @@ h4 {
 
 /* -------------------------> MDITATION RITUAL */
 
+.auth-choice p{
+  color: white;
+}
 
-#meditation-ritual {}
+.auth-choice{
+  padding-top: 150px;
+}
+
+
+.signup h3{
+  display: flex;
+
+
+  font-size: 40px;
+  font-family: 'Philosopher', sans-serif;
+  /* -webkit-text-stroke: white 1px; */
+  font-weight: 600;
+  opacity: 0.7;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+  padding-bottom: 50px;
+}
+
+.signup{
+  color: white;
+}
+
+
+#spotify-button-text{
+  -webkit-animation: color-change 13s ease infinite;
+  -moz-animation: color-change 13s ease  infinite;
+  -o-animation: color-change 13s ease infinite;
+  -ms-animation: color-change 13s ease infinite;
+  animation: color-change 13s ease infinite;
+}
+
+@-webkit-keyframes color-change {
+  0% { color: #ffffff; }
+  50% { color: #80c8e1; }
+  100% { color: #21b472; }
+}
+@-moz-keyframes color-change {
+  0% { color: #ffffff; }
+  50% { color: #80c8e1; }
+  100% { color: #21b472; }
+}
+@-ms-keyframes color-change {
+  0% { color: #ffffff; }
+  50% { color: #80c8e1; }
+  100% { color: #21b472; }
+}
+@-o-keyframes color-change {
+  0% { color: #ffffff; }
+  50% { color: #80c8e1; }
+  100% { color: #21b472; }
+}
+@keyframes color-change {
+  0% { color: #ffffff; }
+  50% { color: #80c8e1; }
+  100% { color: #21b472; }
+}
+
+/* -------------------------------> Embodiment  */
+
+@media(max-width: 600px){
+  h1{
+    font-size: 50px;
+  }
+  hr{
+  width: 75%;
+  border: 0;
+  border-top: white solid 0,5px;
+  border-bottom: white solid 0.1px;
+  opacity: 0.5;
+  }
+  
+
+  .embodiment-div{
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 10px;
+    margin-top: 30px;
+  }
+  .embodiment p{
+    /* text-align: justify; */
+    padding: 10px 15px 10px 15px;
+    line-height: 2;
+    color: black;
+  }
+
+  .embodiment h2{
+    font-size: 20px;
+  }
+
+  .embodiment button{
+    padding: 20px 5px ;
+
+  }
+  .start-timing{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;  
+    margin-top: 30px;
+  }
+  #timer{
+    font-family: 'Philosopher', sans-serif;
+    font-size: 50px;
+    color: white;
+    padding: 60px 10px;
+    margin: 50px 20px 10px 20px;
+  }
+  .embodiment h3{
+    color: white;
+    font-size: 40px;
+    padding: 40px;
+  }
+}
+
+@media(min-width: 600px){
+  /* h1{
+    font-size: 50px;
+  } */
+  hr{
+  width: 75%;
+  border: 0;
+  border-top: white solid 0,5px;
+  border-bottom: white solid 0.1px;
+  opacity: 0.5;
+  }
+  
+
+  .embodiment-div{
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 30px;
+    /* margin-top: 30px; */
+    width: 600px;
+    margin: auto;
+    margin-top: 50px;
+  }
+  
+  .embodiment p{
+    /* text-align: justify; */
+    padding: 10px 15px 10px 15px;
+    line-height: 2;
+    color: black;
+    font-size: 20px;
+  }
+
+  .embodiment h2{
+    font-size: 30px;
+  }
+
+  .embodiment button{
+    padding: 20px 5px ;
+
+  }
+  .start-timing{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;  
+    margin-top: 30px;
+  }
+  #timer{
+    font-family: 'Philosopher', sans-serif;
+    font-size: 70px;
+    color: white;
+    padding: 60px 10px;
+    margin: 50px 20px 10px 20px;
+  }
+  .embodiment h3{
+    color: white;
+    font-size: 40px;    
+    padding: 40px;
+
+  }
+
+  
+}
+
+.journal-input{
+  height: 200px;
+  width: 100%;
+  border: none;
+}
+
