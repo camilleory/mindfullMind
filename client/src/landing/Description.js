@@ -17,29 +17,36 @@ class Description extends React.Component {
 
   render() {
     return (
-      <div id="second-Landing">
-        <div >
-          <div id="link-text">
+
+      <div class="fade-in one">
 
 
-            <Link to="/auth" style={{ color: 'inherit', textDecoration: 'inherit'}}>
-              <p>
-                Depth Rituals are designed to bring you back into a Deep Focus through the path of Rituals. 
-                 <br/>
-                 Select each ritual according to your preference. 
-                 <br/>
-                 On completion move on to the next one,
-                 <br/>
-                 leading you into a Deep Work Session.
+
+
+        <div id="second-Landing" >
+          <div >
+            <div id="link-text">
+
+
+              <Link to="/auth" style={{ color: 'inherit', textDecoration: 'inherit' }}>
+                <p>
+                  Depth Rituals are designed to bring you back into a Deep Focus through the path of Rituals.
+                 <br />
+                  Select each ritual according to your preference.
+                 <br />
+                  On completion move on to the next one,
+                 <br />
+                  leading you into a Deep Work Session.
               </p>
-            </Link>
-          </div>
+              </Link>
+            </div>
 
 
-          <div class="about">
-            <Link to="/about" style={{ opacity:"inherit", color: 'inherit', textDecoration: 'inherit' }}> About </Link>
+            <div class="about">
+              <Link to="/about" style={{ opacity: "inherit", color: 'inherit', textDecoration: 'inherit' }}> About </Link>
+            </div>
+
           </div>
-       
         </div>
       </div>
     );

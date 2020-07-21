@@ -17,8 +17,6 @@ spotifyApi
   .catch(error => console.log('Something went wrong when retrieving an access token', error));
 
 router.get('/tracks/:search', (req, res, next) => {
-
-
   spotifyApi.searchTracks(req.params.search, { limit: 1 })
     .then(function (data) {
       console.log('SPOTIFY Search results in tracks.items', data.body.tracks.items);
@@ -29,11 +27,7 @@ router.get('/tracks/:search', (req, res, next) => {
         return {
           link: "https://open.spotify.com/embed/track/" + i.id,
           name: i.name
-
         }
-
-
-
       })
 
       res.json(allIds)

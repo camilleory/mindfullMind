@@ -53,9 +53,6 @@ class Player extends React.Component {
   }
 
 
-
-
-
   render() {
 
     // let trackInfo =  this.state.i.name
