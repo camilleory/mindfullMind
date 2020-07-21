@@ -72,7 +72,7 @@ class Embodiment extends React.Component {
         {this.state.timeOver ? 
         <div className ="embodiment-div"><h3>Well done!</h3></div>
         :
-        this.state.timer ? <div className="embodiment-div" id="timer">{formatted}</div>
+        this.state.timer ? <div id="timer">{formatted}</div>
         :
 
         this.state.start ? 
