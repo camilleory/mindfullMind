@@ -52,7 +52,7 @@ passport.use(
     {
       clientID: process.env.SPOTIFY_CLIENT_ID,
       clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
-      callbackURL: process.env.BASE_URL + '/api/auth/spotify/callback'
+      callbackURL: '/api/auth/spotify/callback'
     },
     function (accessToken, refreshToken, expires_in, profile, done) {
       console.log("profile", profile)

@@ -143,7 +143,7 @@ authRoutes.get(
   function(req, res) {
     // The request will be redirected to spotify for authentication, so this
     // function will not be called.
-        res.redirect(process.env.BASE_URL);
+        res.redirect(process.env.FRONTEND_URL + "/auth/ritual-choice");
   }
 );
 
