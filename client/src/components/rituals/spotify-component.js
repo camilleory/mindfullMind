@@ -61,34 +61,59 @@ class Player extends React.Component {
     return (
       <div className="App">
 
-        <form onSubmit={this.handleFormSubmit}>
 
-          <h4>{this.props.update}</h4>
+        <div class="deep-listening">
 
-          <input type="text"
-            name="entry"
-            value={this.state.entry}
-            onChange={e => this.handleChangeEntry(e)}
-            placeholder="Search..."
-          >
-          </input>
+       
+        
+          <p> Deep Listening  </p>
+          <p>The late experimental composer and teacher Pauline Oliveros coined the phrase “deep listening” for just this practice. Defining it as a kind of “radical attentiveness,” she wrote, “I differentiate to hear and to listen. To hear is the physical means that enables perception. To listen is to give attention to what is perceived both acoustically and psychologically.”</p>
+          <hr width="200px" />
+       
 
-          <button type="submit" value="submit">Search</button>
-        </form>
+        </div>
+        <div>
+          <form onSubmit={this.handleFormSubmit}>
+
+            <h4>{this.props.update}</h4>
+
+            <input type="search"
+              name="entry"
+              value={this.state.entry}
+              onChange={e => this.handleChangeEntry(e)}
+              placeholder="Search..."
+              class="search-input"
+
+            >
+            </input>
+          </form>
+          <div><button type="submit" value="submit">Search</button> </div>
 
 
-        {this.state.searchResults.map(obj => {
+          {this.state.searchResults.map(obj => {
 
-          return <iframe src={obj.link} width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            return <iframe src={obj.link} width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 
-        })}
+          })}
+        </div>
+        <div>
+          <h5>Curated State</h5>
 
-        <h5>Curated State</h5>
-        <iframe src="https://open.spotify.com/embed/playlist/2cQNMcRqTa6ENC2zctp6Ce" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"  ></iframe>
-        <hr width="200px" />
-        <span> Deep Listening  </span>
-        <p>The late experimental composer and teacher Pauline Oliveros coined the phrase “deep listening” for just this practice. Defining it as a kind of “radical attentiveness,” she wrote, “I differentiate to hear and to listen. To hear is the physical means that enables perception. To listen is to give attention to what is perceived both acoustically and psychologically.”</p>
-        <hr width="200px" />
+          <iframe src="https://open.spotify.com/embed/playlist/0SHeWtvVqSFMXa43wvrFUK" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
       </div>
     );
   }

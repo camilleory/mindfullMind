@@ -74,7 +74,7 @@ class DeepWork extends React.Component {
         <h1>Deep Work Session</h1>
         <hr width="400px" />
 
-        <p> After having done the rituals to release yourself from the internal distraction and looping, allow yourself to submerge into Deep Work. Set aside all devices - putting them into the room net to you, or separating them with a physical barrier. Mitigate all the external distractions.
+        <p> After having done the rituals to release yourself from the internal distraction and looping, allow yourself to submerge into Deep Work. Set aside all devices - putting them into the room next to you, or separating them with a physical barrier. Mitigate all the external distractions.
           Use this space to continue Deep Work intervals to keep you on track. </p>
           <hr width="400px" />
         <button onClick={this.startBodyScan}>Start</button>

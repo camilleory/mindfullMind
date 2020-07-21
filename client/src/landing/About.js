@@ -23,7 +23,7 @@ class About extends React.Component {
       <div className="about-page">
         <div>
           <p class="box fade-in one">
-            Created by a desire to mitigate internal and external distraction. Use this tool every time you have experienced a distractive impulse and need to relaim your foucs.
+            Created by a desire to mitigate internal and external distraction. Use this tool every time you have experienced a distractive impulse and need to reclaim your foucs.
   </p>
           <p class="box fade-in two">
             At the every end of Depth Ritual you will be able to start a Deep Work session, with a timing of your choice.
@@ -59,8 +59,8 @@ class About extends React.Component {
 
 
         <div>
-          <h4> <p>By <a style={{ color: 'inherit', textDecoration: 'inherit' }} id="resources-links" href="https://www.linkedin.com/in/camille-ory-653478161/" target="_blank">Camille Ory</a>
-            <br />&  <a style={{ color: 'inherit', textDecoration: 'inherit' }} id="resources-links" href="https://www.linkedin.com/in/rutazem/" target="_blank">Rūta Žemčugovaitė </a> </p> </h4>
+          <h5> <p>By <a style={{ color: 'inherit', textDecoration: 'inherit' }} id="resources-links" href="https://www.linkedin.com/in/camille-ory-653478161/" target="_blank">Camille Ory</a>
+            <br />&  <a style={{ color: 'inherit', textDecoration: 'inherit' }} id="resources-links" href="https://www.linkedin.com/in/rutazem/" target="_blank">Rūta Žemčugovaitė </a> </p> </h5>
         </div>
  
 </div>
