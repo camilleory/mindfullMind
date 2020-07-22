@@ -54,7 +54,10 @@ class About extends React.Component {
           <Link to='/description' style={{ color: 'inherit', textDecoration: 'inherit' }}> <p id="about-links">Go Back</p> </Link>
         </div>
         <div >
-          <Link to='/auth' style={{ color: 'inherit', textDecoration: 'inherit' }} > <p id="about-links">Enter the Deep Mode</p> </Link>
+          <Link to='/auth' style={{ color: 'inherit', textDecoration: 'inherit' }} > <p id="about-links">Start Depth Rituals</p> </Link>
+        </div>
+        <div >
+          <Link to='/auth/deep-work' style={{ color: 'inherit', textDecoration: 'inherit' }} > <p id="about-links">Enter Deep Work Mode</p> </Link>
         </div>
 
 

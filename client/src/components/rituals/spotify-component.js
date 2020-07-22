@@ -64,14 +64,19 @@ class Player extends React.Component {
 
         <div class="deep-listening">
 
-       
-        
-          <p> Deep Listening  </p>
-          <p>The late experimental composer and teacher Pauline Oliveros coined the phrase “deep listening” for just this practice. Defining it as a kind of “radical attentiveness,” she wrote, “I differentiate to hear and to listen. To hear is the physical means that enables perception. To listen is to give attention to what is perceived both acoustically and psychologically.”</p>
-          <hr width="200px" />
-       
+          <div class="deep-listening-bar" > Deep Listening  </div>
+
+          <div>
+            <p class="deep-listening-text">The late experimental composer and teacher Pauline Oliveros coined the phrase “deep listening” for just this practice. Defining it as a kind of “radical attentiveness,” she wrote, “I differentiate to hear and to listen. To hear is the physical means that enables perception. To listen is to give attention to what is perceived both acoustically and psychologically.”</p>
+          </div>
+
+
 
         </div>
+
+
+
+
         <div>
           <form onSubmit={this.handleFormSubmit}>
 

@@ -122,23 +122,24 @@ class RitualChoice extends React.Component {
 
     // Begin button
     let beginButton = (
-      <button className="btn " class="functional-button" onClick={this.clickHandler}>
-        Begin
+      <button className="btn " class="deepwork-button" onClick={this.clickHandler}>
+        BEGIN
       </button>
     );
 
     // Continue Button
 
     let continueButton = (
-      <button className="btn " class="functional-button fade-in one-point-five" onClick={this.nextRitualHandler}>
-        Continue
+      <button className="btn " class="deepwork-button fade-in one-point-five" onClick={this.nextRitualHandler}>
+        NEXT RITUAL  →
       </button>
     );
 
     //----------------------> deep route path
     let deepWorkButton = (
-      <button className="btn" class="functional-button fade-in one-point-five"> 
-        <Link to="/auth/deep-work" style={{ color: 'inherit', textDecoration: 'inherit' }}> Deep Work </Link>
+      <button className="btn" class="deepwork-button fade-in one-point-five">
+        <Link to="/auth/deep-work" style={{ color: 'inherit', textDecoration: 'inherit' }}>
+          <p> ENTER DEEP WORK  ⇲</p> <h3>  </h3>  </Link>
       </button>
     );
 
@@ -155,73 +156,79 @@ class RitualChoice extends React.Component {
             <div>
               <h2 class="fade-in one ritual-choice-text">Choose the Rituals</h2>{" "}
             </div>
-            <div>
-              <h3 class="fade-in one ritual-choice-subtext">
-               
-                Order in which you choose will determine the sequence.
+
+
+
+            <div class="choice-table">
+              <div class="choice-bar" >
+              
+                <h3 class="fade-in one ritual-choice-subtext">
+                  Order in which you choose will determine the sequence.
               </h3>
+              </div>
+
+              <div>
+                {" "}
+                <form onSubmit={this.onSubmit} class="ritual-choice-rendering fade-in one-point-five">
+                  <div className="form-check" class="check-buttons  ">
+
+                    <label className="form-check-label" class="">
+                      <input
+                        type="checkbox"
+                        checked={this.state.isMeditation}
+                        onChange={this.onChangeMeditation}
+                        className="form-check-input"
+
+
+                      />
+
+
+                      <p class="ritual-in-checkbox center-checkbox"> Meditation</p>
+                    </label>
+                  </div>
+
+                  <div className="form-check" class="check-buttons ">
+                    <label className="form-check-label">
+                      <input
+                        type="checkbox"
+                        checked={this.state.isJournal}
+                        onChange={this.onChangeJournal}
+                        className="form-check-input"
+                      />
+
+                      <p class="ritual-in-checkbox"> Journal</p>
+                    </label>
+                  </div>
+
+                  <div className="form-check" class="check-buttons ">
+                    <label className="form-check-label">
+                      <input
+                        type="checkbox"
+                        checked={this.state.isSoundscape}
+                        onChange={this.onChangeSoundscape}
+                        className="form-check-input"
+                      />
+                      <p class="ritual-in-checkbox">Soundscape </p>
+                    </label>
+                  </div>
+
+                  <div className="form-check" class="check-buttons ">
+                    <label className="form-check-label">
+                      <input
+                        type="checkbox"
+                        checked={this.state.isEmbodiment}
+                        onChange={this.onChangeEmbodiment}
+                        className="form-check-input"
+                      />
+                      <p class="ritual-in-checkbox">Embodiment </p>
+                    </label>
+                  </div>
+                </form>{" "}
+              </div>
+
+              <div>{this.state.rituals.length !== 0 && beginButton}</div>
             </div>
 
-            <div>
-              {" "}
-              <form onSubmit={this.onSubmit} class="ritual-choice-rendering fade-in one-point-five">
-                <div className="form-check" class="check-buttons  ">
-
-                  <label className="form-check-label" class="">
-                    <input
-                      type="checkbox"
-                      checked={this.state.isMeditation}
-                      onChange={this.onChangeMeditation}
-                      className="form-check-input"
-                      
-                     
-                    />
-
-
-                    <p class="ritual-in-checkbox center-checkbox"> Meditation</p>
-                  </label>
-                </div>
-
-                <div className="form-check" class="check-buttons ">
-                  <label className="form-check-label">
-                    <input
-                      type="checkbox"
-                      checked={this.state.isJournal}
-                      onChange={this.onChangeJournal}
-                      className="form-check-input"
-                    />
-
-                    <p class="ritual-in-checkbox"> Journal</p>
-                  </label>
-                </div>
-
-                <div className="form-check" class="check-buttons ">
-                  <label className="form-check-label">
-                    <input
-                      type="checkbox"
-                      checked={this.state.isSoundscape}
-                      onChange={this.onChangeSoundscape}
-                      className="form-check-input"
-                    />
-                    <p class="ritual-in-checkbox">Soundscape </p>
-                  </label>
-                </div>
-
-                <div className="form-check" class="check-buttons ">
-                  <label className="form-check-label">
-                    <input
-                      type="checkbox"
-                      checked={this.state.isEmbodiment}
-                      onChange={this.onChangeEmbodiment}
-                      className="form-check-input"
-                    />
-                    <p class="ritual-in-checkbox">Embodiment </p>
-                  </label>
-                </div>
-              </form>{" "}
-            </div>
-
-            <div>{this.state.rituals.length !== 0 && beginButton}</div>
           </div>
         )}
 
