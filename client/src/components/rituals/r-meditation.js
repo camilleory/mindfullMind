@@ -23,8 +23,8 @@ class Meditation extends React.Component {
         class="fade-in one-point-five"
       >
         <div>
-          <h1>Meditation</h1> 
-          
+          <h1>Meditation</h1>
+
           <div class="meditation">
             <div class="bar">  </div>
 
@@ -34,11 +34,11 @@ class Meditation extends React.Component {
 
             <div>
               <iframe
-                src="https://player.twitch.tv/?channel=endel&parent=https://depth-rituals.herokuapp.com/auth/ritual-choice"
+                src="https://player.twitch.tv/?channel=endel&parent=depth-rituals.herokuapp.com"
                 frameborder="0"
                 allowfullscreen="true"
                 scrolling="no"
-                autoPlay="false"
+                autoPlay="true"
                 height="300"
                 width="300"
               ></iframe>

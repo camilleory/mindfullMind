@@ -71,7 +71,7 @@ class Player extends React.Component {
 
 
         {this.state.deepListeningSlide1 &&
-    
+
 
           <a onClick={this.nextSlide}>
             <div class="deep-listening">
@@ -92,7 +92,7 @@ class Player extends React.Component {
         }
 
         {this.state.deepListeningSlide2 &&
-          
+
 
 
           <a onClick={this.nextSlideExercise}>
@@ -109,8 +109,8 @@ class Player extends React.Component {
 
         }
 
-{this.state.playerSearch &&
-  <div>
+        {this.state.playerSearch &&
+          <div>
 
             <div>
               <form onSubmit={this.handleFormSubmit}>
@@ -124,12 +124,13 @@ class Player extends React.Component {
                   placeholder="Search..."
                   class="search-input"
                 ></input>
-              </form>
-              <div>
+
                 <button type="submit" value="submit" class="deepwork-button">
                   Search
             </button>{" "}
-              </div>
+
+              </form>
+
 
               {this.state.searchResults.map(obj => {
                 return (
@@ -160,11 +161,11 @@ class Player extends React.Component {
 
 
           </div>
-}
+        }
 
-        
 
-          
+
+
         {this.props.deepWorkButton}
 
 
