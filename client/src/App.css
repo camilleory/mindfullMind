@@ -862,19 +862,18 @@ background-color: rgba(122, 189, 105, 0.6);
 
 }
 
-@media(max-width: 600px) {
+/* -------------------------------> Journal  */
 
+@media(max-width: 600px) {
+/* 
   .journal-input {
    margin: auto;
    height: 150px;
    width: 100%;
    border: none;
    outline: none;
-  }
+  }  */
 
-  .journalImg{
-    height: 18px;
-  }
 
   .entry-div{
     margin: auto;
@@ -882,7 +881,7 @@ background-color: rgba(122, 189, 105, 0.6);
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 90%;
+    width: 80%;
   }
 
   #edit-icons{
@@ -890,8 +889,169 @@ background-color: rgba(122, 189, 105, 0.6);
     width: 50px;
     justify-content: space-between;
   }
+
+  .editEntry-input{
+    margin: auto;
+    outline: none;
+    border: none;
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: #008B8B;
+    background-color: transparent;
+    caret-color: white;
+    font-size: 18px; 
+    height: 150px;
+    padding: 10px;
+    margin-top: 10px;
+    width: 250px;
+  }
+  ::placeholder{
+    color: #008B8B;
+  }
+  
+
+  .enterEntry-input{
+    margin: auto;
+    outline: none;
+    border: none;
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: #008B8B;
+    background-color: rgba(255, 255, 255, 0.4);
+    caret-color: white;
+    font-size: 18px; 
+    height: 150px;
+    padding: 10px;
+    margin-top: 10px;
+    width: 250px;
+  }
+
+  .journalEntry-div{
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 10px;
+    margin: auto;
+    margin-top: 30px;
+    color: #008B8B;
+    font-size: 18px;
+    /* height: 300px; */
+    margin-bottom: 30px;
+    width: 250px;
+  }
+
+  .journalEntry-button {
+    margin: 20px 10px 10px 10px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid white;
+    color: white;
+    width: 30%;
+    box-sizing: border-box;
+    font-size: 15px;
+    transition: background 0.5s ease-in-out;
+    align-self: center;
+  }
+
+  .entry-div h5{
+    font-weight: bold;
+  }
+
+  .journalEntry-div p{
+    text-align: left;
+    padding-left: 15px;  
+  }
+
+  .prompts{
+    color: white;
+    margin-left: 10px;
+  }
 }
 
+@media(min-width: 600px) { 
+  .entry-div{
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 400px;
+  }
+
+  #edit-icons{
+    display: flex;
+    width: 50px;
+    justify-content: space-between;
+  }
+
+  .editEntry-input{
+    margin: auto;
+    outline: none;
+    border: none;
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: #008B8B;
+    background-color: transparent;
+    caret-color: white;
+    font-size: 18px; 
+    height: 150px;
+    padding: 10px;
+    margin-top: 10px;
+    width: 400px;
+  }
+  ::placeholder{
+    color: #008B8B;
+  }
+  
+  .enterEntry-input{
+    margin: auto;
+    outline: none;
+    border: none;
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: #008B8B;
+    background-color: rgba(255, 255, 255, 0.4);
+    caret-color: white;
+    font-size: 18px; 
+    height: 150px;
+    padding: 10px;
+    margin-top: 10px;
+    width: 400px;
+  }
+
+  .journalEntry-div{
+    background-color: rgba(255, 255, 255, 0.4);
+    padding:10px 30px;
+    margin: auto;
+    margin-top: 30px;
+    color: #008B8B;
+    font-size: 18px;
+    /* height: 300px; */
+    margin-bottom: 30px;
+    width: 400px;
+  }
+
+  .journalEntry-button {
+    margin: 20px 10px 10px 10px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid white;
+    color: white;
+    width: 30%;
+    box-sizing: border-box;
+    font-size: 15px;
+    transition: background 0.5s ease-in-out;
+    align-self: center;
+  }
+
+  .entry-div h5{
+    font-weight: bold;
+  }
+
+  .journalEntry-div p{
+    text-align: left;
+    padding-left: 15px;  
+  }
+
+  .prompts{
+    color: white;
+    margin-left: 10px;
+  }
+}  
 
 /* ------------------------> SOUNDSCAPE */
 
