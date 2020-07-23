@@ -55,6 +55,7 @@ class Login extends React.Component {
           {this.state.errorMessage ? <p className="error-message">{this.state.errorMessage}</p>: null}
           <button type="submit" value="Sign up" className="button-white">Log in</button>          
         </form>
+        
         <a href={process.env.REACT_APP_BASE_URL + '/api/auth/spotify'}> <button className="button-black" id="spotify-button-text">
         Log in with Spotify</button></a>
         <Link to='/auth/signup'> <p className="p-auth">Don't have an account?<br/><b>Sign up</b></p></Link>

@@ -117,7 +117,7 @@ class Player extends React.Component {
                 <h4>{this.props.update}</h4>
 
                 <input
-                  type="search"
+                  type="text"
                   name="entry"
                   value={this.state.entry}
                   onChange={e => this.handleChangeEntry(e)}
