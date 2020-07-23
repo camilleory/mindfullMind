@@ -34,7 +34,7 @@ class Meditation extends React.Component {
 
             <div>
               <iframe
-                src="https://player.twitch.tv/?channel=endel&parent=depth-rituals.herokuapp.com/auth/ritual-choice"
+                src="https://player.twitch.tv/?channel=endel&parent=depth-rituals.herokuapp.com"
                 frameborder="0"
                 allowfullscreen="true"
                 scrolling="no"
