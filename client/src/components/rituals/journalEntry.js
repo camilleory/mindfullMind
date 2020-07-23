@@ -59,7 +59,7 @@ class Entry extends React.Component {
     //   return <div>Loading...</div>
     // }
     return (
-      <div className="journalEntry-div">
+        <div className="journalEntry-div">
        {this.state.showEditForm ? 
        <form onSubmit={this.handleFormSubmit}>
          <h5>{this.props.update}</h5>
@@ -76,9 +76,7 @@ class Entry extends React.Component {
               {binIcon}
             </div>
           </div>
-
             <p>{this.props.entry}</p>
-        
         </div>}
       </div>
   )

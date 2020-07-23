@@ -104,9 +104,9 @@ class Journal extends React.Component {
           <div className="slide-inside-journal">
             {/* make text area and prompts appear when button prompts pressed */}
 
-            {this.state.prompts? 
-              <div><button className="button-white" onClick={this.displayTextArea}>Free Flow</button> <br/></div>
-            : <div> <button className="button-white" onClick={this.displayPrompts}>Deep work prompts</button> <br/></div>}
+              <div className="journal-button-div">
+                <button className="button-white" onClick={this.displayTextArea}>Free Flow</button> <br/>
+                <button className="button-white" onClick={this.displayPrompts}>Deep work prompts</button> <br/></div>
           
             {this.state.prompts ? 
             <div className="prompts">
@@ -129,11 +129,15 @@ class Journal extends React.Component {
             }
 
             {/* Make previous entries appear when button clicked */}
-            {this.state.entriesList.length > 0 ? <button className="button-white" onClick={this.showEntries}>Show previous entries</button> 
+            {this.state.entriesList.length > 0 ? 
+              this.state.showEntries ? 
+                <button className="button-white" id="show-entry-button" onClick={this.showEntries}>Hide previous entries</button>
+                : <button className="button-white" id="show-entry-button" onClick={this.showEntries}>Show previous entries</button>
             : null}
+
             {this.state.showEntries ?
             this.state.entriesList.map((c) => <Entry removeEntry = {this.removeEntry} updateEntry={this.updateEntry} entry={c.entry} update={c.updatedAt.slice(0, 16).replace("T", ", ")} key = {c._id} _id={c._id}></Entry>)
-            : null}
+            : <div className="journalEntry-div" id="empty-entry-div"></div>}
          
           </div>
           : 
@@ -142,6 +146,7 @@ class Journal extends React.Component {
             <div className="embodiment-div">
               <p>Journal ritual is meant to let you offload the mental loop. Choose one of the options for journal purposes - free flow or with specific prompts.</p>
             </div>
+            <p className="prompts">Tap on the screen to continue</p>
           </a>  
           }
 
