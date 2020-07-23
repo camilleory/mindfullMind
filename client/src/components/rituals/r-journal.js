@@ -110,9 +110,9 @@ class Journal extends React.Component {
           
             {this.state.prompts ? 
             <div className="prompts">
-              <p>Prompt 1</p>
-              <p>Prompt 2</p>
-              <p>Prompt 3</p>
+              <p>- What made you happy today ?</p>
+              <p>- What annoyed you today ?</p>
+              <p>- What are your plans for tomorrow ?</p>
             </div>
             : null 
             }
