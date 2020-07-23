@@ -38,7 +38,7 @@ class Meditation extends React.Component {
                 frameborder="0"
                 allowfullscreen="true"
                 scrolling="no"
-                autoPlay="false"
+                autoPlay="true"
                 height="300"
                 width="300"
               ></iframe>

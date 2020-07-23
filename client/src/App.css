@@ -4,7 +4,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&display=swap");
 
-*{
+* {
   outline: none;
 }
 
@@ -337,7 +337,7 @@ h1 {
   font-size: 25px;
   font-weight: 600;
   color: rgb(211, 0, 0, .6)
-  /* opacity: 40%; */
+    /* opacity: 40%; */
 }
 
 ul {
@@ -457,12 +457,13 @@ a:hover {
   font-size: 18px;
 }
 
-input:focus{
+input:focus {
   color: #008B8B;
   font-size: 18px;
 }
 
-input, select{
+input,
+select {
   color: #008B8B;
 }
 
@@ -477,7 +478,7 @@ input, select{
 }
 
 .error-message {
-  color:#008B8B;
+  color: #008B8B;
   font-size: 13px;
 }
 
@@ -498,7 +499,7 @@ input, select{
 
 
 /* -------------------------------> RITUAL CHOICE PAGE  */
-.choice-table{
+.choice-table {
   border: 1px solid white;
   padding-bottom: 20px;
   width: 350px;
@@ -506,18 +507,16 @@ input, select{
 
 }
 
-.choice-bar{
+.choice-bar {
 
   display: flex;
   height: 60px;
-  border-bottom: 1px  solid white;
+  border-bottom: 1px solid white;
   /* background-color: rgba(255, 255, 255, 0.1); */
-  align-items: center;   
+  align-items: center;
   text-align: center;
   padding: 0px;
   margin-bottom: 20px
-  
-
 }
 
 .check-buttons input:checked+p {
@@ -552,7 +551,7 @@ input, select{
   text-align: center;
   direction: flex;
   align-content: center;
- 
+
   width: 350px;
   height: 70px;
   /* margin: 10px; */
@@ -565,19 +564,19 @@ input, select{
 
 
 @media (min-width: 600px) {
-  .choice-table{
+  .choice-table {
     border: 1px solid white;
     padding-bottom: 20px;
     width: 450px;
     align-items: center;
   }
 
-  .choice-bar{
+  .choice-bar {
     display: flex;
-    border-bottom: 1px  solid white;
-    align-items: center;   
+    border-bottom: 1px solid white;
+    align-items: center;
     text-align: center;
-  
+
   }
 
   .check-buttons input:checked+p {
@@ -586,7 +585,7 @@ input, select{
     color: rgb(255, 255, 255), 1;
     /* opacity: 0.5; */
     align-content: center;
-  
+
     text-align: center;
     text-align: center;
     display: flex;
@@ -596,8 +595,8 @@ input, select{
     height: 70px;
     /* margin: 10px; */
     border: 1px solid rgb(255, 255, 255);
-    border-top:0;
-  
+    border-top: 0;
+
   }
 
 
@@ -607,35 +606,34 @@ input, select{
     color: rgb(0, 0, 0), 1;
     /* opacity: 0.5; */
     align-content: center;
-  
+
     text-align: center;
     text-align: center;
     direction: flex;
     align-content: center;
-   
+
     width: 450px;
     height: 70px;
     /* margin: 10px; */
     border: 1px solid rgb(255, 255, 255);
     /* border-top:0; */
     transition: background 0.5s ease-in-out;
-  
-  
+
+
   }
 
- 
+
 
 }
 
-.ritual-choice-text{
+.ritual-choice-text {
   color: rgb(211, 0, 0, .6);
   text-align: center;
   font-size: 40px;
   font-weight: 600
-  
 }
 
-.ritual-choice-subtext{
+.ritual-choice-subtext {
   color: rgb(211, 0, 0, .6);
   font-size: 20px;
   padding: 0;
@@ -651,7 +649,7 @@ input, select{
   width: 300px;
   height: 70px;
   margin: 0px;
-  color:white;
+  color: white;
   font-size: 25px;
   font-weight: 400;
 }
@@ -686,13 +684,13 @@ input, select{
 
 
 
-.deepwork-button{
+.deepwork-button {
   width: 300px;
   height: 70px;
   margin: 10px;
-  color:white;
+  color: white;
   border: none;
- font-size: 25px;
+  font-size: 25px;
   outline: none;
   background-color: rgb(255, 255, 255, 0.0);
   font-family: 'IBM Plex Sans', sans-serif;
@@ -701,9 +699,9 @@ input, select{
 
 
 
-.deepwork-button:hover{
-/* border: 1px solid; */
-color: rgb(211, 0, 0, .6);
+.deepwork-button:hover {
+  /* border: 1px solid; */
+  color: rgb(211, 0, 0, .6);
 
 
 }
@@ -959,7 +957,7 @@ color: rgb(211, 0, 0, .6);
 
 
   /* Entry TITLE */
-  .entry-div{
+  .entry-div {
     margin: auto;
     display: flex;
     flex-direction: row;
@@ -968,13 +966,13 @@ color: rgb(211, 0, 0, .6);
     width: 250px;
   }
 
-  #edit-icons{
+  #edit-icons {
     display: flex;
     width: 50px;
     justify-content: space-between;
   }
 
-  .editEntry-input{
+  .editEntry-input {
     margin: auto;
     outline: none;
     border: none;
@@ -982,18 +980,19 @@ color: rgb(211, 0, 0, .6);
     color: #008B8B;
     background-color: transparent;
     caret-color: white;
-    font-size: 18px; 
+    font-size: 18px;
     height: 150px;
     padding: 10px;
     margin-top: 10px;
     width: 250px;
   }
-  ::placeholder{
+
+  ::placeholder {
     color: #008B8B;
   }
-  
 
-  .enterEntry-input{
+
+  .enterEntry-input {
     margin: auto;
     outline: none;
     border: none;
@@ -1001,15 +1000,15 @@ color: rgb(211, 0, 0, .6);
     color: #008B8B;
     background-color: rgba(255, 255, 255, 0.4);
     caret-color: white;
-    font-size: 18px; 
+    font-size: 18px;
     height: 150px;
     padding: 10px;
     margin-top: 10px;
     width: 250px;
   }
 
-    /* Whole Entry DIV */
-  .journalEntry-div{
+  /* Whole Entry DIV */
+  .journalEntry-div {
     background-color: rgba(255, 255, 255, 0.4);
     padding: 10px;
     margin: auto;
@@ -1039,38 +1038,41 @@ color: rgb(211, 0, 0, .6);
     background-color: rgba(255, 255, 255, 0.4);
   }
 
-  .entry-div h5{
+  .entry-div h5 {
     font-weight: bold;
   }
 
-  .journalEntry-div p{
+  .journalEntry-div p {
     text-align: left;
-    padding-left: 15px;  
+    padding-left: 15px;
     width: 250px;
   }
 
-  .prompts{
+  .prompts {
     color: white;
     margin-left: 10px;
   }
-  .journal-button-div{
+
+  .journal-button-div {
     display: flex;
     margin: auto;
     margin-top: 20px;
     margin-bottom: 20px;
   }
-  #empty-entry-div{
+
+  #empty-entry-div {
     background-color: transparent;
   }
-  #show-entry-button{
+
+  #show-entry-button {
     width: 90%;
   }
 }
 
-@media(min-width: 600px) { 
+@media(min-width: 600px) {
 
-    /* Entry TITLE */
-  .entry-div{
+  /* Entry TITLE */
+  .entry-div {
     margin: auto;
     display: flex;
     flex-direction: row;
@@ -1080,13 +1082,13 @@ color: rgb(211, 0, 0, .6);
     /* padding-bottom: 0px; */
   }
 
-  #edit-icons{
+  #edit-icons {
     display: flex;
     width: 50px;
     justify-content: space-between;
   }
 
-  .editEntry-input{
+  .editEntry-input {
     margin: auto;
     outline: none;
     border: none;
@@ -1094,17 +1096,18 @@ color: rgb(211, 0, 0, .6);
     color: #008B8B;
     background-color: transparent;
     caret-color: white;
-    font-size: 18px; 
+    font-size: 18px;
     height: 150px;
     padding: 10px;
     margin-top: 10px;
     width: 400px;
   }
-  ::placeholder{
+
+  ::placeholder {
     color: #008B8B;
   }
-  
-  .enterEntry-input{
+
+  .enterEntry-input {
     margin: auto;
     outline: none;
     border: none;
@@ -1112,15 +1115,15 @@ color: rgb(211, 0, 0, .6);
     color: #008B8B;
     background-color: rgba(255, 255, 255, 0.4);
     caret-color: white;
-    font-size: 18px; 
+    font-size: 18px;
     height: 150px;
     padding: 10px;
     margin-top: 10px;
     width: 400px;
   }
 
-    /* Whole DIV */
-  .journalEntry-div{
+  /* Whole DIV */
+  .journalEntry-div {
     background-color: rgba(255, 255, 255, 0.4);
     padding: 10px 30px;
     margin: auto;
@@ -1145,64 +1148,65 @@ color: rgb(211, 0, 0, .6);
     align-self: center;
   }
 
-  .entry-div h5{
+  .entry-div h5 {
     font-weight: bold;
   }
 
-  .journalEntry-div p{
+  .journalEntry-div p {
     text-align: left;
-    padding-left: 15px; 
+    padding-left: 15px;
     padding-top: 0px;
-    margin-top: 0px; 
+    margin-top: 0px;
   }
 
-  .prompts{
+  .prompts {
     color: white;
     margin-left: 10px;
   }
-  .journal-button-div{
+
+  .journal-button-div {
     display: flex;
     margin: auto;
     margin-top: 20px;
     margin-bottom: 20px;
   }
 
-  #show-entry-button{
+  #show-entry-button {
     width: 90%;
   }
-  #empty-entry-div{
+
+  #empty-entry-div {
     background-color: transparent;
   }
-}  
+}
 
 /* ------------------------> SOUNDSCAPE */
 
 
 .search-input {
-  /* display: flex;
-  align-items: flex-start; */
   background-color: transparent;
-  /* padding: 10px; */
+  padding: 5px 5px 2px 0px;
   margin: 10px;
   border: none;
   border-bottom: 1px solid white;
-  width: 300px;
-  /* box-sizing: border-box; */
+  width: 100%;
+  box-sizing: border-box;
   outline: none;
+  font-size: 18px;
 }
 
 
 
-.deep-listening{
+.deep-listening {
   border: 1px solid white;
   padding: 0px;
   width: 450px;
 }
 
-.deep-listening-bar{
+.deep-listening-bar {
   height: 40px;
   /* width: 100%; */
-  border-bottom: 1px  solid white;
+  border-bottom: 1px solid white;
   background-color: rgba(255, 255, 255, 0.4);
   display: flex;
   text-align: center;
@@ -1212,15 +1216,15 @@ color: rgb(211, 0, 0, .6);
   color: rgb(211, 0, 0, .6);
 }
 
-.deep-listening-text{
+.deep-listening-text {
   padding: 20px;
   font-size: 20px;
-  color:white;
+  color: white;
   font-weight: 600;
 
 }
 
-.r-sound-component{
+.r-sound-component {
   display: flex;
   text-align: center;
   align-items: center;
@@ -1230,63 +1234,60 @@ color: rgb(211, 0, 0, .6);
 
 
 @media (max-width: 600px) {
-  .deep-listening{
+  .deep-listening {
     border: 1px solid white;
     padding-bottom: 20px;
     width: 350px;
   }
 
-  .deep-listening-bar{
+  .deep-listening-bar {
     font-size: 25px;
     height: 50px;
-    border-bottom: 1px  solid white;
-    background-color: rgba(255, 255, 255, 0.4)    
-  
+    border-bottom: 1px solid white;
+    background-color: rgba(255, 255, 255, 0.4)
   }
 
 
-.deep-listening-text{
-  padding: 20px;
-  font-size: 20px;
-}
+  .deep-listening-text {
+    padding: 20px;
+    font-size: 20px;
+  }
 
-  
+
 }
 
 
 /* ----------------------------------> MEDITATION COMPONENT */
 
-.meditation{
+.meditation {
   border: 1px solid white;
   padding-bottom: 20px;
   width: 350px;
 }
 
-.bar{
+.bar {
   height: 30px;
   /* width: 100%; */
-  border-bottom: 1px  solid white;
-  background-color: rgba(255, 255, 255, 0.4)    
-
+  border-bottom: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.4)
 }
 
 
 @media (min-width: 600px) {
-  .meditation{
+  .meditation {
     border: 1px solid white;
     padding-bottom: 20px;
     width: 600px;
   }
 
-  .bar{
+  .bar {
     /* height: 110px; */
     /* width: 100%; */
-    border-bottom: 1px  solid white;
-    background-color: rgba(255, 255, 255, 0.4)    
-  
+    border-bottom: 1px solid white;
+    background-color: rgba(255, 255, 255, 0.4)
   }
 
-  
+
 }
 
 
@@ -1295,43 +1296,39 @@ color: rgb(211, 0, 0, .6);
 /* ----------------------------------> DEEP WORK COMPONENT */
 
 
-.dw-description{
+.dw-description {
   border: 1px solid white;
   /* padding-bottom: 10px; */
   width: 350px;
-  
+
 }
 
-.dw-description-bar{
+.dw-description-bar {
   height: 30px;
   /* width: 100%; */
-  border-bottom: 1px  solid white;
-  background-color: rgba(255, 255, 255, 0.4)    
-
+  border-bottom: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.4)
 }
 
-.dw-description-text{
+.dw-description-text {
   padding: 20px;
   font-size: 20px;
 }
 
 
 @media (min-width: 600px) {
-  .dw-description{
+  .dw-description {
     border: 1px solid white;
     padding-bottom: 20px;
     width: 600px;
   }
 
-  .dw-description-bar{
+  .dw-description-bar {
     /* height: 110px; */
     /* width: 100%; */
-    border-bottom: 1px  solid white;
-    background-color: rgba(255, 255, 255, 0.4)    
-  
+    border-bottom: 1px solid white;
+    background-color: rgba(255, 255, 255, 0.4)
   }
 
-  
+
 }
-
-
