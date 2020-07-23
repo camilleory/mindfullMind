@@ -4,6 +4,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&display=swap");
 
+*{
+  outline: none;
+}
+
+
 body {
   margin: 20px;
   height: 100%;
@@ -388,6 +393,21 @@ span.further-reources:hover .resources-disclaimer {
   transition: background 0.5s ease-in-out;
 
 }
+
+/* Button on small screen
+@media (max-width: 600px) {
+  .button-white {
+    margin: 20px 10px 10px 10px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid white;
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 18px;
+    transition: background 0.5s ease-in-out;
+  }
+} */
 
 .button-white:hover {
   background-color: rgba(255, 255, 255, 0.4);
@@ -852,7 +872,7 @@ color: rgb(211, 0, 0, .6);
   #timer {
     font-family: 'Philosopher', sans-serif;
     font-size: 70px;
-    color: #464949;
+    color: #008B8B;
     padding: 50px 10px;
     margin: 60px 20px 40px 20px;
   }
@@ -936,23 +956,16 @@ color: rgb(211, 0, 0, .6);
 /* -------------------------------> Journal  */
 
 @media(max-width: 600px) {
-/* 
-  .journal-input {
-   margin: auto;
-   height: 150px;
-   width: 100%;
-   border: none;
-   outline: none;
-  }  */
 
 
+  /* Entry TITLE */
   .entry-div{
     margin: auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 80%;
+    width: 250px;
   }
 
   #edit-icons{
@@ -995,6 +1008,7 @@ color: rgb(211, 0, 0, .6);
     width: 250px;
   }
 
+    /* Whole Entry DIV */
   .journalEntry-div{
     background-color: rgba(255, 255, 255, 0.4);
     padding: 10px;
@@ -1004,7 +1018,8 @@ color: rgb(211, 0, 0, .6);
     font-size: 18px;
     /* height: 300px; */
     margin-bottom: 30px;
-    width: 250px;
+    width: 270px;
+    word-wrap: break-word;
   }
 
   .journalEntry-button {
@@ -1020,6 +1035,10 @@ color: rgb(211, 0, 0, .6);
     align-self: center;
   }
 
+  .journalEntry-button:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+
   .entry-div h5{
     font-weight: bold;
   }
@@ -1027,15 +1046,30 @@ color: rgb(211, 0, 0, .6);
   .journalEntry-div p{
     text-align: left;
     padding-left: 15px;  
+    width: 250px;
   }
 
   .prompts{
     color: white;
     margin-left: 10px;
+  }
+  .journal-button-div{
+    display: flex;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  #empty-entry-div{
+    background-color: transparent;
+  }
+  #show-entry-button{
+    width: 90%;
   }
 }
 
 @media(min-width: 600px) { 
+
+    /* Entry TITLE */
   .entry-div{
     margin: auto;
     display: flex;
@@ -1043,6 +1077,7 @@ color: rgb(211, 0, 0, .6);
     justify-content: space-between;
     align-items: center;
     width: 400px;
+    /* padding-bottom: 0px; */
   }
 
   #edit-icons{
@@ -1084,9 +1119,10 @@ color: rgb(211, 0, 0, .6);
     width: 400px;
   }
 
+    /* Whole DIV */
   .journalEntry-div{
     background-color: rgba(255, 255, 255, 0.4);
-    padding:10px 30px;
+    padding: 10px 30px;
     margin: auto;
     margin-top: 30px;
     color: #008B8B;
@@ -1115,12 +1151,27 @@ color: rgb(211, 0, 0, .6);
 
   .journalEntry-div p{
     text-align: left;
-    padding-left: 15px;  
+    padding-left: 15px; 
+    padding-top: 0px;
+    margin-top: 0px; 
   }
 
   .prompts{
     color: white;
     margin-left: 10px;
+  }
+  .journal-button-div{
+    display: flex;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  #show-entry-button{
+    width: 90%;
+  }
+  #empty-entry-div{
+    background-color: transparent;
   }
 }  
 

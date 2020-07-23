@@ -88,12 +88,16 @@ class Embodiment extends React.Component {
             <div className="embodiment-div">
               <p>Close your eyes and scan your body from head to toes, feeling the points of tensions, just watching them. Whenever you realise you've been distracted, come back to scanning your body.</p>
             </div>
+            <p className="prompts">Tap on the screen to continue</p>
+
           </a>
         : <a onClick={this.nextClicked}>
             <div className="embodiment-div">
               <h2>Body scan</h2>
               <p>The body scan method allows you to connect with you inner self, ground yourself and get a break from everyday's struggles and stimulations.</p>
             </div>
+            <p className="prompts">Tap on the screen to continue</p>
+
           </a>}
       </div>
           
