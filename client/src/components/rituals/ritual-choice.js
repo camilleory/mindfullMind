@@ -226,9 +226,9 @@ class RitualChoice extends React.Component {
                 </form>{" "}
               </div>
 
-              <div>{this.state.rituals.length !== 0 && beginButton}</div>
             </div>
 
+              <div>{this.state.rituals.length !== 0 && beginButton}</div>
           </div>
         )}
 
@@ -237,6 +237,8 @@ class RitualChoice extends React.Component {
         {this.state.continueButton && continueButton}
 
         {this.state.ShowDeepWork && deepWorkButton}
+
+       
       </div>
     );
   }
