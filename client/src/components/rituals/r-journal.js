@@ -101,50 +101,51 @@ class Journal extends React.Component {
         <h1>Journal</h1>
         <hr></hr>
         {this.state.next ? 
-          <div className="slide-inside">
-          {/* make text area and prompts appear when button prompts pressed */}
-          <button className="button-white" onClick={this.displayTextArea}>Free Flow</button> <br/>
-          <button className="button-white" onClick={this.displayPrompts}>Deep work prompts</button> <br/>
+          <div className="slide-inside-journal">
+            {/* make text area and prompts appear when button prompts pressed */}
+
+            {this.state.prompts? 
+              <div><button className="button-white" onClick={this.displayTextArea}>Free Flow</button> <br/></div>
+            : <div> <button className="button-white" onClick={this.displayPrompts}>Deep work prompts</button> <br/></div>}
           
-          {this.state.prompts ? 
-            <div>
+            {this.state.prompts ? 
+            <div className="prompts">
               <p>Prompt 1</p>
               <p>Prompt 2</p>
               <p>Prompt 3</p>
             </div>
-          : null 
-        }
+            : null 
+            }
         
-        {/* make text area appear when button free flow pressed */}
-        { this.state.freeflow ? 
-        <div>
-          <form onSubmit = {this.saveEntry}> 
-            <textarea className="journal-input" name = "entry" value = {this.state.entry}
-            onChange={e=>this.handleChange(e)} placeholder="Write today's feeling here"></textarea> <br/>
-            <button type="submit">Save</button><hr/>
-          </form>     
-        </div>: null
-        }
+            {/* make text area appear when button free flow pressed */}
+            { this.state.freeflow ? 
+            <div>
+              <form onSubmit = {this.saveEntry}> 
+                <textarea className="enterEntry-input" name = "entry" value = {this.state.entry}
+                onChange={e=>this.handleChange(e)} placeholder="Write today's feeling here"></textarea> <br/>
+                <button className="journalEntry-button" type="submit">Save</button><hr/>
+              </form>     
+            </div>: null
+            }
 
-        {/* Make previous entries appear when button clicked */}
-        {this.state.entriesList.length > 0 ? <button className="button-white" onClick={this.showEntries}>Show previous entries</button> 
-        : null}
-        {this.state.showEntries ?
-          this.state.entriesList.map((c) => <Entry removeEntry = {this.removeEntry} updateEntry={this.updateEntry} entry={c.entry} update={c.updatedAt.slice(0, 16).replace("T", ", ")} key = {c._id} _id={c._id}></Entry>)
-          : null}
+            {/* Make previous entries appear when button clicked */}
+            {this.state.entriesList.length > 0 ? <button className="button-white" onClick={this.showEntries}>Show previous entries</button> 
+            : null}
+            {this.state.showEntries ?
+            this.state.entriesList.map((c) => <Entry removeEntry = {this.removeEntry} updateEntry={this.updateEntry} entry={c.entry} update={c.updatedAt.slice(0, 16).replace("T", ", ")} key = {c._id} _id={c._id}></Entry>)
+            : null}
          
-           
-        </div>
-        : 
-        
-        <a onClick={this.nextSlide}>
-          <div className="embodiment-div">
-            <p>Journal ritual is meant to let you offload the mental loop. Choose one of the options for journal purposes - free flow or with specific prompts.</p>
           </div>
-        </a>  
-        }
+          : 
+        
+          <a onClick={this.nextSlide}>
+            <div className="embodiment-div">
+              <p>Journal ritual is meant to let you offload the mental loop. Choose one of the options for journal purposes - free flow or with specific prompts.</p>
+            </div>
+          </a>  
+          }
 
-        </div>
+      </div>
 
     );
   }

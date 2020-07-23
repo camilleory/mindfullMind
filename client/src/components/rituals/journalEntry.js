@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPen, faTrashAlt } from '@fortawesome/free-solid-svg-icons'
+
 
 class Entry extends React.Component {
 
@@ -48,25 +51,29 @@ class Entry extends React.Component {
 
 
   render() {
+    const penIcon = <FontAwesomeIcon icon={faPen} onClick={this.editHandler}/>
+    const binIcon = <FontAwesomeIcon icon={faTrashAlt} onClick={this.deleteHandler}/>
+
+
     // if(this.state.loading){
     //   return <div>Loading...</div>
     // }
     return (
-      <div>
+      <div className="journalEntry-div">
        {this.state.showEditForm ? 
        <form onSubmit={this.handleFormSubmit}>
-         <h4>{this.props.update}</h4>
-         <textarea type="text" name="entry" value ={this.state.entry} onChange={e => this.handleChangeEntry(e)}>
+         <h5>{this.props.update}</h5>
+         <textarea className="editEntry-input" type="text" name="entry" value ={this.state.entry} onChange={e => this.handleChangeEntry(e)}>
          </textarea>
-         <button type="submit" value="submit">Edit</button>
+         <button className="journalEntry-button" type="submit" value="submit">Edit</button>
        </form>
        :
         <div>       
           <div className="entry-div">
             <h5>{this.props.update}</h5>
             <div id="edit-icons">
-              <img className="journalImg" src="https://img.icons8.com/android/24/000000/edit.png" onClick={this.editHandler}/>
-              <img className="journalImg" src="https://img.icons8.com/windows/32/000000/delete-forever.png" onClick={this.deleteHandler}/>        
+              {penIcon}
+              {binIcon}
             </div>
           </div>
 
