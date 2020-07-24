@@ -525,7 +525,7 @@ select {
 }
 
 
-.auth-choice h3 {
+.auth-choice h3  {
   display: flex;
   font-size: 40px;
   font-family: 'Philosopher', sans-serif;
@@ -536,6 +536,7 @@ select {
   text-align: center;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   margin: 0px
 }
 
@@ -748,7 +749,15 @@ select {
 
 }
 
-/* -------------------------> MDITATION RITUAL */
+/* -------------------------> MEDITATION RITUAL */
+
+
+.signup-render{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
 
 .auth-choice p {
   color: white;
