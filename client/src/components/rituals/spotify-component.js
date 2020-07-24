@@ -17,7 +17,7 @@ class Player extends React.Component {
   nextSlide = () => {
     this.setState({
       deepListeningSlide2: true,
-      deepListeningSlide1: false,
+      deepListeningSlide1: false
     });
   };
 
@@ -25,7 +25,7 @@ class Player extends React.Component {
     this.setState({
       playerSearch: true,
       deepListeningSlide1: false,
-      deepListeningSlide2: false,
+      deepListeningSlide2: false
     });
   };
 
@@ -67,112 +67,128 @@ class Player extends React.Component {
   render() {
     return (
       <div className="App">
+        <div class="heading">
+          {this.state.deepListeningSlide1 && (
+            <a onClick={this.nextSlide}>
+              <div class="deep-listening">
+                <div class="deep-listening-bar">
+                  Deep Listening
+                  <p class="x"> ╳ </p>
+                </div>
 
+                <div>
+                  <p class="deep-listening-text">
+                    The late experimental composer and teacher Pauline Oliveros
+                    coined the phrase “deep listening” for just this practice.
+                    Defining it as a kind of “radical attentiveness,” she wrote,
+                    “I differentiate to hear and to listen. To hear is the
+                    physical means that enables perception. To listen is to give
+                    attention to what is perceived both acoustically and
+                    psychologically.”
+                  </p>
+                </div>
+              </div>
+            </a>
+          )}
 
+          {this.state.deepListeningSlide2 && (
+            <a onClick={this.nextSlideExercise}>
+              <div class="deep-listening">
+                <div class="deep-listening-bar">
+                  {" "}
+                  Deep Listening
+                  <p class="x"> ╳ </p>
+                </div>
 
-        {this.state.deepListeningSlide1 &&
+                <div>
+                  <p class="deep-listening-text">
+                  Deep listening allows to expand your awareness to sound. Instead of using sound as a background, bring it into the forefront of your attention. Explore different sensations, emotions, as well as different sounds your perceive in the Ritual. Choose your own track or listen to the Curated State.
+                  </p>
+                </div>
+              </div>
+            </a>
+          )}
 
-
-          <a onClick={this.nextSlide}>
+          {this.state.playerSearch && (
             <div class="deep-listening">
-              <div class="deep-listening-bar"> Deep Listening </div>
+              <div class="deep-listening-bar">
+                {" "}
+                Deep Listening
+                <p class="x"> ╳ </p>
+              </div>
 
               <div>
-                <p class="deep-listening-text">
-                  The late experimental composer and teacher Pauline Oliveros coined
-                  the phrase “deep listening” for just this practice. Defining it as
-                  a kind of “radical attentiveness,” she wrote, “I differentiate to
-                  hear and to listen. To hear is the physical means that enables
-                  perception. To listen is to give attention to what is perceived
-                  both acoustically and psychologically.”
-            </p>
+                <div class="element-render">
+                  <div>
+                    <form onSubmit={this.handleFormSubmit} autocomplete="off">
+                      <h4>{this.props.update}</h4>
+                      <input
+                        type="input"
+                        name="entry"
+                        value={this.state.entry}
+                        onChange={e => this.handleChangeEntry(e)}
+                        placeholder="Choose your state..."
+                        id="search-input"
+                      ></input>
+                      <button
+                        type="submit"
+                        value="submit"
+                        class="deepwork-button"
+                      >
+                        SEARCH ↑
+                      </button>{" "}
+                    </form>
+                  </div>
+
+                  <div class="deep-listening-elements">
+                    {this.state.searchResults.map(obj => {
+                      return (
+                        <div>
+                          <div class="deep-listening-bar">
+                            Chosen State
+                            <p class="x"> ╳ </p>
+                          </div>
+
+                          <div class="player">
+                            <iframe
+                              src={obj.link}
+                              width="300"
+                              height="380"
+                              frameborder="0"
+                              allowtransparency="true"
+                              allow="encrypted-media"
+                            ></iframe>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  <div class="deep-listening-elements">
+                    <div class="deep-listening-bar">
+                      Curated State
+                      <p class="x"> ╳ </p>
+                    </div>
+
+                    <div class="player">
+                      <iframe
+                        src="https://open.spotify.com/embed/playlist/0SHeWtvVqSFMXa43wvrFUK"
+                        width="300"
+                        height="380"
+                        frameborder="0"
+                        allowtransparency="true"
+                        allow="encrypted-media"
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </a>
-        }
+          )}
 
-        {this.state.deepListeningSlide2 &&
-
-
-
-          <a onClick={this.nextSlideExercise}>
-            <div class="deep-listening">
-              <div class="deep-listening-bar"> Deep Listening Exercise </div>
-
-              <div>
-                <p class="deep-listening-text">
-                  Here we deisplay deep listening exercise
-     </p>
-              </div>
-            </div>
-          </a>
-
-        }
-
-        {this.state.playerSearch &&
-          <div>
-
-            <div>
-              <form onSubmit={this.handleFormSubmit}>
-                <h4>{this.props.update}</h4>
-
-                <input
-                  type="text"
-                  name="entry"
-                  value={this.state.entry}
-                  onChange={e => this.handleChangeEntry(e)}
-                  placeholder="Search..."
-                  class="search-input"
-                ></input>
-
-                <button type="submit" value="submit" class="deepwork-button">
-                  Search
-            </button>{" "}
-
-              </form>
-
-
-              {this.state.searchResults.map(obj => {
-                return (
-                  <iframe
-                    src={obj.link}
-                    width="300"
-                    height="380"
-                    frameborder="0"
-                    allowtransparency="true"
-                    allow="encrypted-media"
-                  ></iframe>
-                );
-              })}
-            </div>
-
-            <div>
-              <h3>CURATED STATE</h3>
-
-              <iframe
-                src="https://open.spotify.com/embed/playlist/0SHeWtvVqSFMXa43wvrFUK"
-                width="300"
-                height="380"
-                frameborder="0"
-                allowtransparency="true"
-                allow="encrypted-media"
-              ></iframe>
-            </div>
-
-
-          </div>
-        }
-
-
-
-
-        {this.props.deepWorkButton}
-
-
-
+          {this.props.deepWorkButton}
+        </div>
       </div>
-
-
     );
   }
 }

@@ -49,7 +49,7 @@ class Login extends React.Component {
         {this.props.currentUser ? <Redirect to="/auth/ritual-choice"></Redirect> : null}
         { this.state.redirect ? <Redirect to="/auth/ritual-choice"></Redirect> : null }
 
-        <form onSubmit={this.handleFormSubmit}>
+        <form onSubmit={this.handleFormSubmit} autocomplete="off">
           <input className="input-auth" placeholder="Email" type="email" name="email" value={this.state.email} required onChange={ e => this.handleChange(e)}/>
           <input className="input-auth" placeholder="Password" name="password" type="password" value={this.state.password} required onChange={ e => this.handleChange(e)} />
           {this.state.errorMessage ? <p className="error-message">{this.state.errorMessage}</p>: null}

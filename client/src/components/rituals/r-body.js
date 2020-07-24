@@ -67,7 +67,7 @@ class Embodiment extends React.Component {
     return (
       <div className="slide-inside embodiment" class="fade-in one-point-five">
 
-        <h1>Embodiment</h1>
+        <h1 >Embodiment</h1>
         <hr/>
         {this.state.timeOver ? 
         <div className ="embodiment-div"><h3>Well done!</h3></div>

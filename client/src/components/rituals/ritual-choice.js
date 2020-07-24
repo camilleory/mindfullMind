@@ -123,7 +123,7 @@ class RitualChoice extends React.Component {
     // Begin button
     let beginButton = (
       <button className="btn " class="deepwork-button" onClick={this.clickHandler}>
-        BEGIN
+        BEGIN ↑
       </button>
     );
 

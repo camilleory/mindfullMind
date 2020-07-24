@@ -62,7 +62,7 @@ class Signup extends React.Component {
         <h3>Sign up</h3>
         {this.state.redirect ? <Redirect to="/auth/login"></Redirect> : null}
 
-        <form onSubmit={this.handleFormSubmit}>
+        <form onSubmit={this.handleFormSubmit} autocomplete="off">
           <input className="input-auth" placeholder="Email" type="email" name="email" value={this.state.email} required onChange={e => this.handleChange(e)} />
 
           <input className="input-auth" placeholder="Password" name="password" type="password" value={this.state.password} required onChange={e => this.handleChange(e)} />

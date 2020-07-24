@@ -36,6 +36,13 @@ body {
   animation: AnimationName 13s ease infinite;
 }
 
+.heading{
+margin-top: 30px;
+/* padding-bottom: 30px; */
+
+}
+
+
 @-webkit-keyframes AnimationName {
   0% {
     background-position: 0% 24%;
@@ -125,11 +132,12 @@ h1 {
   /* -webkit-text-stroke: white 1px; */
   font-weight: 600;
   /* opacity: 0.3; */
-  color: rgb(255, 255, 255, .6);
+  color: rgb(255, 255, 255, 0.6);
   text-align: center;
   justify-content: center;
   align-items: center;
   margin: 0px;
+ 
 }
 
 #landing {
@@ -320,10 +328,23 @@ h1 {
   padding-bottom: 20px;
 }
 
+.about:hover {
+  padding-top: 80px;
+  padding-bottom: 20px;
+}
+
 #about-links {
   padding: 0px;
   margin: 0px;
   font-size: 35px;
+}
+
+#about-links:hover {
+  padding: 0px;
+  margin: 0px;
+  font-size: 35px;
+  color:white
+
 }
 
 .about-page {
@@ -352,10 +373,26 @@ li {
   font-size: 25px;
 }
 
+li:hover {
+  margin-bottom: 3px;
+  padding: 0px;
+  font-size: 25px;
+  color:white
+}
 /* ---------------------- FIX ON HOVER */
 /* ---------------------- DROP DOWN RESOURCES */
 .resources-disclaimer {
   display: none;
+}
+
+
+
+#resources-links:hover {
+  padding: 0px;
+  margin: 0px;
+  font-size: 25px;
+  color:white
+
 }
 
 span.further-reources:hover .resources-disclaimer {
@@ -458,13 +495,18 @@ a:hover {
 }
 
 input:focus {
-  color: #008B8B;
+  color: rgb(255, 255, 255);
   font-size: 18px;
+  background-color: transparent;
+
 }
 
 input,
 select {
-  color: #008B8B;
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+
+
 }
 
 ::placeholder {
@@ -474,7 +516,7 @@ select {
 }
 
 .p-auth {
-  font-size: 15px;
+  font-size: 18px;
 }
 
 .error-message {
@@ -988,7 +1030,7 @@ select {
   }
 
   ::placeholder {
-    color: #008B8B;
+    color: rgb(255, 255, 255);
   }
 
 
@@ -1104,7 +1146,7 @@ select {
   }
 
   ::placeholder {
-    color: #008B8B;
+    color: rgb(255, 255, 255);
   }
 
   .enterEntry-input {
@@ -1183,37 +1225,58 @@ select {
 /* ------------------------> SOUNDSCAPE */
 
 
-.search-input {
+#search-input {
   background-color: transparent;
   padding: 5px 5px 2px 0px;
   margin: 10px;
+  margin-top: 10px;
   border: none;
   border-bottom: 1px solid white;
-  width: 100%;
+  width: 60%;
   box-sizing: border-box;
   outline: none;
   font-size: 18px;
+  color:white;
 }
 
+@media(max-width: 600px){
+  #search-input{
+   font-size: 20px; 
+   width: 90%;
+
+  }
+
+}
+
+
+.soundscape-bar{
+
+}
 
 
 .deep-listening {
   border: 1px solid white;
   padding: 0px;
   width: 450px;
+
 }
 
 .deep-listening-bar {
-  height: 40px;
+  height: 30px;
   /* width: 100%; */
   border-bottom: 1px solid white;
   background-color: rgba(255, 255, 255, 0.4);
   display: flex;
   text-align: center;
   align-items: center;
-  justify-content: center;
-  font-size: 30px;
+  justify-content: space-between;
+  /* padding: 2px; */
+
+  font-size: 20px;
   color: rgb(211, 0, 0, .6);
+  padding-left: 10px;
+  padding-right: 10px;
+
 }
 
 .deep-listening-text {
@@ -1224,12 +1287,44 @@ select {
 
 }
 
+.x{
+  /* padding-left: 110px; */
+  /* padding-right: 10px; */
+  color: white;
+
+}
+
+
 .r-sound-component {
   display: flex;
   text-align: center;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+.deep-listening-elements{
+  border: 1px solid white;
+  width: 320px;
+  margin: 20px;
+}
+
+.element-render{
+ display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* padding-bottom: 20px; */
+}
+
+.player{
+padding-top:10px;
+padding-bottom:10px;
+color:rgb(211, 6, 6);
+font-size: 25px;
+
+
 }
 
 
@@ -1242,9 +1337,10 @@ select {
 
   .deep-listening-bar {
     font-size: 25px;
-    height: 50px;
+    height: 30px;
     border-bottom: 1px solid white;
-    background-color: rgba(255, 255, 255, 0.4)
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 2px;
   }
 
 
@@ -1253,6 +1349,13 @@ select {
     font-size: 20px;
   }
 
+  .x{
+    padding-left: 60px;
+    padding-right: 10px;
+    color: white;
+    font-size: 20px;
+  
+  }
 
 }
 
@@ -1260,16 +1363,79 @@ select {
 /* ----------------------------------> MEDITATION COMPONENT */
 
 .meditation {
+  /* display: flex; */
+  /* flex-direction: column;
+  align-items: center; */
+  align-content: center;
   border: 1px solid white;
   padding-bottom: 20px;
   width: 350px;
+  height: 400px;
+  margin: 30px;
+}
+
+.content-render {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  padding:0;
+}
+
+.content-render-text{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  margin:0px;
+
+
+  border: 1px solid white;
+  width: 300px;
+  margin: 20px;
+  padding: 10px;
+  color: white;
+  /* padding: 20px; */
+  font-size: 20px;
+  color: white;
+  font-weight: 600;
+  height: 300px
+
+}
+
+.div-text{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  margin:0px;
+
 }
 
 .bar {
   height: 30px;
   /* width: 100%; */
   border-bottom: 1px solid white;
-  background-color: rgba(255, 255, 255, 0.4)
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+  padding-right: 10px;
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px
+}
+
+.meditation-iframe {
+  border: 1px solid white;
+  /* width: 320px;
+  height: 320px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  padding: 10px;
+  margin: 20px;
 }
 
 
@@ -1284,7 +1450,7 @@ select {
     /* height: 110px; */
     /* width: 100%; */
     border-bottom: 1px solid white;
-    background-color: rgba(255, 255, 255, 0.4)
+    background-color: rgba(255, 255, 255, 0.3)
   }
 
 
@@ -1295,6 +1461,12 @@ select {
 
 /* ----------------------------------> DEEP WORK COMPONENT */
 
+.dw-render{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
 
 .dw-description {
   border: 1px solid white;
@@ -1312,9 +1484,20 @@ select {
 
 .dw-description-text {
   padding: 20px;
-  font-size: 20px;
+  font-size: 25px;
+  color:white;
+  font-weight: 600;
 }
 
+.dw-time{
+  font-size: 120px;
+  font-family: "Philosopher", sans-serif;
+  -webkit-text-stroke: rgb(211, 6, 6) 1px;
+  font-weight: 600;
+  /* opacity: 0.6; */
+  color: rgb(255, 255, 255, 0.6);
+
+}
 
 @media (min-width: 600px) {
   .dw-description {
@@ -1329,6 +1512,18 @@ select {
     border-bottom: 1px solid white;
     background-color: rgba(255, 255, 255, 0.4)
   }
+
+
+
+.dw-time{
+  font-size: 150px;
+  font-family: "Philosopher", sans-serif;
+  -webkit-text-stroke: rgb(211, 0, 0,) 1px;
+  font-weight: 600;
+  /* opacity: 0.6; */
+  color: rgb(255, 255, 255, 0.6);
+
+}
 
 
 }
