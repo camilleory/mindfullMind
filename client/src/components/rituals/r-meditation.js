@@ -50,7 +50,10 @@ class Meditation extends React.Component {
 
           <div  >
             <div class="meditation">
-              <div class="bar"> ╳ </div>
+            <div class="deep-listening-bar">
+                            Breath Meditation
+                            <p class="x"> ╳ </p>
+                          </div>
 
               <div class="content-render">
                 {this.state.slide1 && (

@@ -26,17 +26,25 @@ class Auth extends React.Component {
        {this.props.currentUser ? <Redirect to="/auth/ritual-choice"></Redirect> : null}
 
 
-        {/* Tapping/Clicking on secription text leads to signup/login */}
-        <Link to='/auth/signup'><h3>Sign up</h3></Link>
+       <div class="">
 
-        <br />
+       </div>
 
-        {/* Tapping/Clicking on secription text leads to About */}
-        <Link to='/auth/login'><h3>Log in</h3></Link>
-        <br />
+        <div>
+         <Link to='/auth/signup'><h3 class="deepwork-button">Sign up</h3></Link> 
+        </div>
+
+        <div>
+                  <Link to='/auth/login'><h3 class="deepwork-button">Log in</h3></Link>
+        </div>
+
+        <div>
+          <Link to='/description'><p class="deepwork-button">GO BACK</p></Link>
+        </div>
+        
 
 
-        <Link to='/description'><p>go back</p></Link>
+        
 
 
 

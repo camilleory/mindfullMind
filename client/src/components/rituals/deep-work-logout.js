@@ -139,7 +139,7 @@ class DeepWork extends React.Component {
 
                 <div class="player">
                   <button
-                    onClick={() => this.setTimer(6000)}
+                    onClick={() => this.setTimer(600)}
                     class="deepwork-button"
                   >
                     10 minutes{" "}
