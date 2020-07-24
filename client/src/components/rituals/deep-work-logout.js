@@ -68,68 +68,123 @@ class DeepWork extends React.Component {
 
     return (
       <div className="App">
-
-
         <h1>Deep Work Session</h1>
         <hr width="400px" />
 
-        {/* {this.state.deepWorkDescription &&   } */}
 
-        {this.state.start ? (
+        
+
+        <div class="heading dw-render">
+
+{this.state.timer ? <div class="dw-time">{formatted}
+              
+              </div> : null}
+
+              {this.state.timeOver ? <div>
+
+                <div class="deep-listening-elements">
+                  <div class="deep-listening-bar">
+                    Message
+                  <p class="x"> ╳ </p>
+                  </div>
+
+                  <div class="player">Well Done!</div>
+                </div>
+
+              </div> : null}
 
 
-          <div>
-            <h4>Choose Deep Work Timing</h4>
-
-            <button onClick={() => this.setTimer(1800)} class="deepwork-button">30 minutes</button>
-            <button onClick={() => this.setTimer(2700)} class="deepwork-button">45 minutes</button>
-            <button onClick={() => this.setTimer(3600)} class="deepwork-button">60 minutes</button>
-
-            {this.state.timer ? <div>{formatted}</div> : null}
-            {this.state.timeOver ? <div>Well done !</div> : null}
-
-            <h4>Break</h4>
-            <button onClick={() => this.setTimer(600)} class="deepwork-button">10 minutes </button>
-
+          {this.state.start ? (
             <div>
-              <Link to="/">
-                <button onClick={() => this.logoutUser(this.props)} class="deepwork-button">
-                  Logout
+              <div class="deep-listening-elements">
+                <div class="deep-listening-bar">
+                  Choose Timing
+                  <p class="x"> ╳ </p>
+                </div>
+
+                <div class="player">
+                  <button
+                    onClick={() => this.setTimer(1800)}
+                    class="deepwork-button"
+                  >
+                    30 minutes
+                  </button>
+                  <button
+                    onClick={() => this.setTimer(2700)}
+                    class="deepwork-button"
+                  >
+                    45 minutes
+                  </button>
+                  <button
+                    onClick={() => this.setTimer(3600)}
+                    class="deepwork-button"
+                  >
+                    60 minutes
+                  </button>
+                </div>
+              </div>
+
+
+
+             
+
+
+
+
+              <div class="deep-listening-elements">
+                <div class="deep-listening-bar">
+                  Break
+                  <p class="x"> ╳ </p>
+                </div>
+
+                <div class="player">
+                  <button
+                    onClick={() => this.setTimer(6000)}
+                    class="deepwork-button"
+                  >
+                    10 minutes{" "}
+                  </button>
+                </div>
+              </div>
+
+              <div>
+                <Link to="/">
+                  <button
+                    onClick={() => this.logoutUser(this.props)}
+                    class="deepwork-button"
+                  >
+                    LOGOUT ↑
+                  </button>
+                </Link>
+              </div>
+            </div>
+          ) : (
+              <div class="dw-description">
+                <div class="deep-listening-bar">
+                  Focus Time
+                <p class="x"> ╳ </p>
+                </div>
+
+                <div>
+                  <p class="dw-description-text">
+                    {" "}
+                    After having done the rituals to release yourself from the
+                    internal distraction and looping, allow yourself to submerge
+                    into Deep Work. 
+                    
+                    Set aside all devices - putting them into the
+                    room next to you, or separating them with a physical barrier.
+                    Mitigate all the external distractions. Use this space to
+                  continue Deep Work intervals to keep you on track.{" "}
+                  </p>
+                  <hr width="400px" />
+                  <button onClick={this.startDeepWork} class="deepwork-button">
+                    START →
                 </button>
-              </Link>
-            </div>
-          </div>
-
-
-
-
-
-        ) : (
-
-            <div class="dw-description">
-
-              <div class="dw-description-bar">
-
+                </div>
               </div>
-
-
-              <div >
-                <p class="dw-description-text">
-                  {" "}
-                  After having done the rituals to release yourself from the
-                  internal distraction and looping, allow yourself to submerge into
-                  Deep Work. Set aside all devices - putting them into the room next
-                  to you, or separating them with a physical barrier. Mitigate all
-                  the external distractions. Use this space to continue Deep Work
-              intervals to keep you on track.{" "}
-                </p>
-                <hr width="400px" />
-                <button onClick={this.startDeepWork} class="deepwork-button">START →</button>
-              </div>
-
-            </div>
-
-          )}
+            )}
+        </div>
       </div>
     );
   }

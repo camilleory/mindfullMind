@@ -43,7 +43,7 @@ class Description extends React.Component {
 
 
             <div class="about">
-              <Link to="/about" style={{ opacity: "inherit", color: 'inherit', textDecoration: 'inherit' }}> About </Link>
+              <Link to="/about" style={{ opacity: "inherit", color: 'inherit', textDecoration: 'inherit' }}> ABOUT ↑ </Link>
             </div>
 
           </div>

@@ -111,8 +111,8 @@ class Journal extends React.Component {
             {this.state.prompts ? 
             <div className="prompts">
               <p>- What made you happy today ?</p>
-              <p>- What annoyed you today ?</p>
-              <p>- What are your plans for tomorrow ?</p>
+              <p>- How do you currently feel ?</p>
+              <p>- What are your goals for Deep Work Session ?</p>
             </div>
             : null 
             }

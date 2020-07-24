@@ -25,6 +25,7 @@ class Soundscape extends React.Component {
       <div className="App" class="fade-in one-point-five r-sound-component">
 
       <h1>Soundscape</h1>
+      <hr/>
       {/* <h2>Choose a song or enjoy our curated playlist</h2> */}
       
 <Player> </Player>
